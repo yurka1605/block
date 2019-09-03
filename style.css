@@ -218,8 +218,11 @@ header .custom-container {
 .buyout__form button[type="submit"],
 .buyout__form input[type="tel"] {
     height: 60px;
-    border: 2px solid #00B75A;
     padding: 0 20px;
+}
+.buyout__form1 input[type="tel"],
+.buyout__form input[type="tel"] {
+    border: 2px solid #00B75A;
 }
 .buyout__form1 input[type="tel"] {
     padding-left: 60px;
@@ -301,7 +304,6 @@ header .custom-container {
 .watch-video {
     flex: 0 0 37%;
     height: 100%;
-    clip-path: 
 }
 .watch-video__clip {
     width: inherit;
