@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap&subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,800&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://yurka1605.github.io/block/index.html"/>
     <title>Block</title>
 </head>
 <body>
@@ -113,6 +114,122 @@
                 </div>
             </div>
         </div>
+        <div class="modal-backgroup"></div>
+        <div class="modal-wrap">
+            <div class="modal-window">
+                <div class="modal-close">×</div>
+                <div class="modal-body">
+                    <div class="modal-body__home">
+                        <div class="modal-body__home_group">
+                            <a href="#" target="_blank">
+                                <span>ДОМА</span>
+                                <img src="img/modal/home.png" alt="home">
+                            </a>
+                            <a href="#" target="_blank">
+                                <span>Новостройки</span>
+                                <img src="img/modal/new.png" alt="new">
+                            </a>
+                            <a href="#" target="_blank">
+                                <span>Коммерческая</span>
+                                <img src="img/modal/commerc.png" alt="commerc">
+                            </a>
+                        </div>
+                        <div class="modal-body__home_group">
+                            <a href="#" target="_blank">
+                                <span>Аренда</span>
+                                <img src="img/modal/arenda.png" alt="arenda">
+                            </a>
+                            <a href="#" target="_blank">
+                                <span>Элитная</span>
+                                <img src="img/modal/elit.png" alt="elit">
+                            </a>
+                            <a href="#" target="_blank">
+                                <span>Загородная</span>
+                                <img src="img/modal/cityout.png" alt="cityout">
+                            </a>
+                        </div>
+                        <div class="modal-body__home_group">
+                            <a href="#" target="_blank">
+                                <span>Дачи</span>
+                                <img src="img/modal/dachi.png" alt="dachi">
+                            </a>
+                            <a href="#" target="_blank">
+                                <span>Земля</span>
+                                <img src="img/modal/erth.png" alt="erth">
+                            </a>
+                            <a href="#" target="_blank">
+                                <span>Гаражи</span>
+                                <img src="img/modal/garaji.png" alt="garaji">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-body__problem">
+                        <div class="modal-body__problem_links">
+                            <a href="#" target="_blank">Арест</a>
+                        </div>
+                        <div class="modal-body__problem_links">
+                            <a href="#" target="_blank">Отсутствие согласия содольщиков</a>
+                        </div>
+                        <div class="modal-body__problem_links">
+                            <a href="#" target="_blank">Судебные споры</a>
+                        </div>
+                        <div class="modal-body__problem_links">
+                            <a href="#" target="_blank">Залог</a>
+                            <a href="#" target="_blank">Ипотека</a>
+                        </div>
+                        <div class="modal-body__problem_links">
+                            <a href="#" target="_blank">Неоплаченные долги по ЖКХ</a>
+                            <a href="#" target="_blank">Долги</a>
+                        </div>
+                        <div class="modal-body__problem_links">
+                            <a href="#" target="_blank">Прописаные люди</a>
+                        </div>
+                        <div class="modal-body__problem_links">
+                            <a href="#" target="_blank">Обременение</a>
+                        </div>
+                        <img class="modal-body__problem-top" src="img/modal/problem-top.png" alt="top">
+                        <img class="modal-body__problem-bottom" src="img/modal/problem-bottom.png" alt="bottom">
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+    <script>
+        const linkBlack = document.querySelector('.buyout__head_link-black');
+        const linkBlue = document.querySelector('.buyout__head_link-blue');
+        const modalBackgroup = document.querySelector('.modal-backgroup');
+        const modalWrap = document.querySelector('.modal-wrap');
+        const modalWindow = document.querySelector('.modal-window');
+        const modalClose = document.querySelector('.modal-close');
+        const modalBodyHome = document.querySelector('.modal-body__home');
+        const modalBodyProblem = document.querySelector('.modal-body__problem');
+
+        linkBlack.addEventListener('click', function () {
+            openModal(event);
+            modalWindow.classList.add('link');
+            modalBodyProblem.classList.add('active');
+        });
+
+        linkBlue.addEventListener('click', function () {
+            openModal(event);
+            modalWindow.classList.add('link');
+            modalBodyHome.classList.add('active');
+        });
+
+        modalClose.addEventListener('click', function () {
+            event.preventDefault();
+            modalWindow.classList.remove('link');
+            modalBackgroup.classList.remove('active');
+            modalWrap.classList.remove('active');
+            modalBodyHome.classList.remove('active');
+            modalBodyProblem.classList.remove('active');
+        });
+
+        function openModal (event) {
+            event.preventDefault();
+            modalBackgroup.classList.add('active');
+            modalWrap.classList.add('active');
+        }
+    </script>
 </body>
 </html>
