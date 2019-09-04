@@ -24,6 +24,7 @@ main {
     width: 100vw;
     height: auto;
     background: url(img/bg.png) no-repeat center;
+    background: url(img/bg.webp) no-repeat center;
     background-size: cover;
     padding-bottom: 150px;
 }
@@ -315,6 +316,7 @@ header .custom-container {
     display: flex;
     align-items: flex-end;
     background: url(img/bg-small.png) no-repeat center;
+    background: url(img/bg-small.webp) no-repeat center;
     background-size: contain;
 }
 .watch-video__clip img {
