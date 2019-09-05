@@ -238,19 +238,31 @@
         const modalBodyProblem = document.querySelector('.modal-body__problem');
         const modalBodyForm = document.querySelector('.modal-body__form');
         const modalThanks = document.querySelector('.modal-body__thanks');
+        const tel1 = document.querySelector('#tel1');
+        const tel2 = document.querySelector('#tel2');
+        const email = document.querySelector('#email');
+        const check1 = document.querySelector('#check');
+        const check2 = document.querySelector('#check1');
+        const check3 = document.querySelector('#modalCheck');
 
         formModal.addEventListener('click', function () {
+            if (!validMail(email) || !check3.checked) return;
             openModal(event);
             modalThanks.classList.add('active');
             modalBodyForm.classList.remove('active');
+            tel1.value = tel2.value = email.value = '';
         });
 
         form1.addEventListener('click', function () {
+            const re = /\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/;
+            if (!validPhone(tel1, re) || !check1.checked) return;
             openModal(event);
             modalBodyForm.classList.add('active');
         });
 
         form2.addEventListener('click', function () {
+            const re = /\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/;
+            if (!validPhone(tel2, re) || !check2.checked) return;
             openModal(event);
             modalBodyForm.classList.add('active');
         });
@@ -276,13 +288,27 @@
             modalBodyProblem.classList.remove('active');
             modalThanks.classList.remove('active');
             modalBodyForm.classList.remove('active');
+            tel1.value = tel2.value = email.value = '';
         });
 
         function openModal (event) {
-            // event.preventDefault();
+            event.preventDefault();
             modalBackgroup.classList.add('active');
             modalWrap.classList.add('active');
         }
+
+        function validMail(el) {
+            var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+            var myMail = el.value;
+            var valid = re.test(myMail);
+            return valid;
+        }
+        
+        function validPhone(el,re) {
+            var myPhone = el.value;
+            var valid = re.test(myPhone);
+            return valid;
+        }  
     </script>
 </body>
 </html>
