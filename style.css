@@ -317,7 +317,8 @@ header .custom-container {
 .modal__form_checkbox input[type=checkbox],
 .buyout__form_checkbox input[type=checkbox],
 .buyout__form_checkbox1 input[type=checkbox]  {
-    display: none;
+    opacity: 0;
+    position: absolute;
 }
 .modal__form_checkbox input[type=checkbox]:checked + label::before,
 .buyout__form_checkbox input[type=checkbox]:checked + label::before,
