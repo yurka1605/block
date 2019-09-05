@@ -426,10 +426,6 @@ header .custom-container {
 }
 .modal-window.link {
     background: transparent;
-    background-image: url(img/bg-form.png);
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
 }
@@ -451,6 +447,7 @@ header .custom-container {
     align-items: center;
     justify-content: center;
     z-index: 2;
+    cursor: pointer;
 }
 .modal-body {
     width: fit-content;
@@ -467,21 +464,35 @@ header .custom-container {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 60%;
+    padding: 10%;
+    background-image: url(img/bg-form.png);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.modal-body__problem {
+    background-image: url(img/modal/bg-problem.png);
 }
 .modal-body__home.active {
     display: flex;
+    padding-top: 15%;
+    padding-left: 8%;
 }
 .modal-body__home_group {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 2%;
 }
 .modal-body__home_group a {
     display: block;
     width: 30%;
     height: 100%;
     position: relative;
+    margin-left: 2%;
+    border-radius: 6px;
+    overflow: hidden;
 }
 .modal-body__home_group a img {
     width: 100%;
@@ -496,61 +507,77 @@ header .custom-container {
     line-height: 100%;
     width: 100%;
     height: 100%;
+    text-transform: uppercase;
+    z-index: 1;
+}
+.modal-body__home_group a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .6;
+}
+.modal-body__home_group:first-child > a:first-child::after {
+    background: #4b9ce8;
 }
 .modal-body__home_group:first-child > a:nth-child(2) {
-    margin-top: -11%;
-    margin-left: -2%;
+    margin-top: -6%;
+}
+.modal-body__home_group:first-child > a:nth-child(2)::after {
+    background: #18952d;
+}
+.modal-body__home_group:first-child > a:last-child::after {
+    background: #591895;
 }
 .modal-body__home_group:first-child > a:last-child {
-    margin-top: -17%;
-    margin-left: 2%;
+    margin-top: -12%;
 }
-.modal-body__home_group:nth-child(2) > a:first-child {
-    margin-left: -3%;
+.modal-body__home_group:nth-child(2) > a:first-child::after {
+    background: #d36624;
 }
 .modal-body__home_group:nth-child(2) > a:nth-child(2) {
-    margin-top: -5%;
-    margin-left: 3%;
+    margin-top: -6%;
+}
+.modal-body__home_group:nth-child(2) > a:nth-child(2)::after {
+    background: #18a88b;
+}
+.modal-body__home_group:nth-child(2) > a:last-child::after {
+    background: #b49000;
 }
 .modal-body__home_group:nth-child(2) > a:last-child {
-    margin-top: -11%;
-    margin-left: 2%;
+    margin-top: -12%;
 }
-.modal-body__home_group:last-child > a:first-child {
-    margin-left: -10%;
+.modal-body__home_group:last-child > a:first-child::after {
+    background: #d03516;
+}
+.modal-body__home_group:last-child > a:nth-child(2)::after {
+    background: #4b9ce8;
 }
 .modal-body__home_group:last-child > a:nth-child(2) {
-    margin-top: -7%;
+    margin-top: -6%;
     margin-left: 2%;
 }
+.modal-body__home_group:last-child > a:last-child::after {
+    background: #94ca03;
+}
 .modal-body__home_group:last-child > a:last-child {
-    margin-top: -11%;
-    margin-left: 8.7%;
+    margin-top: -12%;
 }
 .modal-body__problem.active {
     display: flex;
+    align-items: center;
 }
 .modal-body__problem {
     top: 50%;
-    width: 100%;
-    padding: 10%;
     overflow: hidden;
-}
-.modal-body__problem-top,
-.modal-body__problem-bottom {
-    position: absolute;
-    width: 100%;
-}
-.modal-body__problem-top {
-    top: 0;
-    left: 0;
-}
-.modal-body__problem-bottom {
-    bottom: -14%;
-    right: -29%;
+    padding-right: 8%;
+    padding-left: 12%;
 }
 .modal-body__problem_links {
-    height: calc(90%/7);
+    height: 60px;
     width: 100%;
     padding: 2%;
     z-index: 3;
@@ -561,14 +588,35 @@ header .custom-container {
     width: fit-content;
     height: 100%;
     line-height: 100%;
-    background: #fff;
+    border: 1px solid #fff;
     text-decoration: none;
-    font-size: 29px;
+    font-size: 20px;
     font-weight: 700;
     padding: 0 2%;
     border-radius: 4px;
-    color: #000;
+    color: #fff;
+    text-transform: uppercase;
     margin-left: 2%;
+}
+.modal-body__problem_links a:hover {
+    border-color: #c0f826;
+}
+.modal-body__problem_links:first-child {
+    padding-left: 3%;
+}
+.modal-body__problem_links:nth-child(3) {
+    padding-left: 3%;
+}
+.modal-body__problem_links:nth-child(5) {
+    padding-left: 0%;
+}
+.modal-body__problem_links:nth-child(6) {
+    margin-left: -3%;
+    padding-left: 0%;
+}
+.modal-body__problem_links:nth-child(7) {
+    margin-left: -6%;
+    padding-left: 0%;
 }
 /* END:modal-window */
 
@@ -582,6 +630,11 @@ header .custom-container {
     }
     .buyout__head {
         font-size: 30px;
+    }
+    .modal-body__problem {
+        width: 100%;
+        padding: 15%;
+        padding-left: 25%
     }
 }
 @media (max-width: 992px) {
@@ -642,6 +695,9 @@ header .custom-container {
     .buyout__form1 {
         padding-top: 15px;
     }
+    .modal-body__problem {
+        padding-left: 20%;   
+    }
 }
 @media (max-width: 768px) {
     .buyout__head {
@@ -671,10 +727,26 @@ header .custom-container {
     .buyout__form-enter1::before {
         height: 66px;
     }
+    .modal-body__home {
+        width: 100%;
+    }
+    .modal-body__problem_links a {
+        font-size: 16px;
+    }
+    .modal-body__problem_links {
+        height: 40px;
+    }
+    .modal-body__problem {
+        padding-left: 15%;
+        padding-right: 10%;
+    }
 }
 @media (max-width: 540px) {
     .appraiser__cards_card {width: 100%}
     .modal-body__home_group a span {
+        font-size: 12px;
+    }
+    .modal-body__problem_links a {
         font-size: 12px;
     }
 }
@@ -691,6 +763,20 @@ header .custom-container {
     .appraiser__cards_card img {
         width: 100px;
         margin: 0 auto;
+    }
+    .modal-body__problem {
+        padding-left: 12%;
+        padding-right: 0%;
+    }
+}
+@media (max-width: 360px) {
+    .modal-body__problem_links {
+        height: 32px;
+        padding-bottom: 0;
+        padding-left: 0;
+    }
+    .modal-body__problem_links a {
+        font-size: 11px;
     }
 }
 
