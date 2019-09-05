@@ -10,6 +10,9 @@ body {
     height: 100%;
     background: #E7F3FA;
 }
+.overflow-hidden {
+    overflow: hidden;
+}
 input {
     outline: none;
     box-shadow: none;
@@ -419,7 +422,7 @@ header .custom-container {
     height: 100%;
     background: #253640;
     opacity: 0.6;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;

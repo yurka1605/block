@@ -202,7 +202,7 @@
                             <br>
                             <form action="#" method="post">
                                 <div class="modal__form-enter">
-                                    <input type="email" name="email" id="email" placeholder="example@email.com" pattern="^[\w-\.]+@[\w-]+\.[a-z]{2,4}$" required>
+                                    <input type="email" name="email" id="email" placeholder="example@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" required>
                                     <button type="submit">Подтвердить</button>
                                 </div>
                                 <div class="modal__form_checkbox">
@@ -244,6 +244,7 @@
         const check1 = document.querySelector('#check');
         const check2 = document.querySelector('#check1');
         const check3 = document.querySelector('#modalCheck');
+        const bodys = document.querySelector('body');
 
         formModal.addEventListener('click', function () {
             if (!validMail(email) || !check3.checked) return;
@@ -294,12 +295,14 @@
             modalThanks.classList.remove('active');
             modalBodyForm.classList.remove('active');
             email.value = '';
+            bodys.classList.remove('overflow-hidden');
         });
 
         function openModal (event) {
             event.preventDefault();
             modalBackgroup.classList.add('active');
             modalWrap.classList.add('active');
+            bodys.classList.add('overflow-hidden');
         }
 
         function validMail(el) {
