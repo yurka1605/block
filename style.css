@@ -278,6 +278,7 @@ header .custom-container {
 .buyout__form_checkbox,
 .buyout__form_checkbox1 {
     padding-top: 8px;
+    position: relative;
 }
 .modal__form_checkbox label,
 .buyout__form_checkbox label,
@@ -318,6 +319,8 @@ header .custom-container {
 .buyout__form_checkbox input[type=checkbox],
 .buyout__form_checkbox1 input[type=checkbox]  {
     opacity: 0;
+    top: 11px;
+    left: 4px;
     position: absolute;
 }
 .modal__form_checkbox input[type=checkbox]:checked + label::before,
