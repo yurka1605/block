@@ -250,7 +250,8 @@
             openModal(event);
             modalThanks.classList.add('active');
             modalBodyForm.classList.remove('active');
-            tel1.value = tel2.value = email.value = '';
+            email.value = '';
+            check3.checked = false;
         });
 
         form1.addEventListener('click', function () {
@@ -258,6 +259,8 @@
             if (!validPhone(tel1, re) || !check1.checked) return;
             openModal(event);
             modalBodyForm.classList.add('active');
+            check1.checked = false;
+            tel1.value = ''; 
         });
 
         form2.addEventListener('click', function () {
@@ -265,6 +268,8 @@
             if (!validPhone(tel2, re) || !check2.checked) return;
             openModal(event);
             modalBodyForm.classList.add('active');
+            check2.checked = false;
+            tel2.value = ''; 
         });
 
         linkBlack.addEventListener('click', function () {
@@ -288,7 +293,7 @@
             modalBodyProblem.classList.remove('active');
             modalThanks.classList.remove('active');
             modalBodyForm.classList.remove('active');
-            tel1.value = tel2.value = email.value = '';
+            email.value = '';
         });
 
         function openModal (event) {
