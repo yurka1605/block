@@ -188,6 +188,37 @@
                             <a href="#" target="_blank">Залог</a>
                         </div>
                     </div>
+                    <div class="modal-body__form">
+                        <div class="modal__form">
+                            <h3>
+                                Часто, телефоны случайно оставляют клиенты,
+                                не заинтересованные в юридической консультации
+                            </h3>
+                            <br>
+                            <p>
+                                Введите свой е-мэил, в целях подтверждение, вашего желания получить бесплатную
+                                консультацию от профильного юриста по вашему вопросу
+                            </p>
+                            <br>
+                            <form action="#" method="post">
+                                <div class="modal__form-enter">
+                                    <input type="email" name="email" id="email" placeholder="example@email.com" pattern="" required>
+                                    <button type="submit">Подтвердить</button>
+                                </div>
+                                <div class="modal__form_checkbox">
+                                    <input required type="checkbox" id="modalCheck">
+                                    <label for="modalCheck">Я согласен с политикой конфиденциальностии даю согласие на обработку моих&nbsp;<a href="#">персональных данных</a></label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-body__thanks">
+                        <div class="modal-body__thanks_checkbox">&#10004;</div>
+                        <div class="modal-body__thanks_text">
+                            <h3>Спасибо за заявку!</h3>
+                            <p>В ближайшее время наш специалист свяжется с вами.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -195,12 +226,34 @@
     <script>
         const linkBlack = document.querySelector('.buyout__head_link-black');
         const linkBlue = document.querySelector('.buyout__head_link-blue');
+        const form1 = document.querySelector('.buyout__form-enter button');
+        const form2 = document.querySelector('.buyout__form-enter1 button');
+        const formModal = document.querySelector('.modal__form-enter button');
+
         const modalBackgroup = document.querySelector('.modal-backgroup');
         const modalWrap = document.querySelector('.modal-wrap');
         const modalWindow = document.querySelector('.modal-window');
         const modalClose = document.querySelector('.modal-close');
         const modalBodyHome = document.querySelector('.modal-body__home');
         const modalBodyProblem = document.querySelector('.modal-body__problem');
+        const modalBodyForm = document.querySelector('.modal-body__form');
+        const modalThanks = document.querySelector('.modal-body__thanks');
+
+        formModal.addEventListener('click', function () {
+            openModal(event);
+            modalThanks.classList.add('active');
+            modalBodyForm.classList.remove('active');
+        });
+
+        form1.addEventListener('click', function () {
+            openModal(event);
+            modalBodyForm.classList.add('active');
+        });
+
+        form2.addEventListener('click', function () {
+            openModal(event);
+            modalBodyForm.classList.add('active');
+        });
 
         linkBlack.addEventListener('click', function () {
             openModal(event);
@@ -221,10 +274,12 @@
             modalWrap.classList.remove('active');
             modalBodyHome.classList.remove('active');
             modalBodyProblem.classList.remove('active');
+            modalThanks.classList.remove('active');
+            modalBodyForm.classList.remove('active');
         });
 
         function openModal (event) {
-            event.preventDefault();
+            // event.preventDefault();
             modalBackgroup.classList.add('active');
             modalWrap.classList.add('active');
         }
