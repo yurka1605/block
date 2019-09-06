@@ -15,7 +15,7 @@
         <header>
             <div class="header custom-container">
                 <div class="logo">
-                    <img class="logo__img" src="img/logo.svg" alt="logo">
+                    <a href="#"><img class="logo__img" src="img/logo.svg" alt="logo"></a>
                     <div class="logo__text">
                         <span class="logo__text_head">Высшая Инстанция</span>
                         <span class="logo__text_body">Юридический консорциум</span>
@@ -25,7 +25,7 @@
                 <div class="label">
                     <div class="label__rect">
                         <span class="label__place"><img src="img/ribbon-badge-award.svg" alt="badge-award"> 2 место</span>
-                        <span class="label__pravo">в рейтинге<br><a href="https://pravo.ru">pravo.ru</a> на 2017</span>
+                        <span class="label__pravo">в рейтинге<br><a href="https://pravo.ru" target="_blanck">pravo.ru</a> на 2017</span>
                     </div>
                 </div>
                 <div class="phone">
@@ -66,7 +66,7 @@
                 <div class="watch-video">
                     <div class="watch-video__clip">
                         <div class="watch-video__play">
-                            <a class="watch-video__play-link" href="#" target="_blank">
+                            <a class="watch-video__play-link" href="#">
                                 <span class="watch-video__play-triangle"></span>
                             </a>
                             <div class="watch-video__play-label">
@@ -219,13 +219,18 @@
                             <p>В ближайшее время наш специалист свяжется с вами.</p>
                         </div>
                     </div>
+                    <div class="modal-body__video"></div>
                 </div>
             </div>
         </div>
     </main>
     <script>
+    window.onload = function() {
+        const urlVideo = 'https://www.youtube.com/embed/nRhWUhDeYWY';
+
         const linkBlack = document.querySelector('.buyout__head_link-black');
         const linkBlue = document.querySelector('.buyout__head_link-blue');
+        const videoShowButton = document.querySelector('.watch-video__play-link ');
         const form1 = document.querySelector('.buyout__form-enter button');
         const form2 = document.querySelector('.buyout__form-enter1 button');
         const formModal = document.querySelector('.modal__form-enter button');
@@ -238,6 +243,7 @@
         const modalBodyProblem = document.querySelector('.modal-body__problem');
         const modalBodyForm = document.querySelector('.modal-body__form');
         const modalThanks = document.querySelector('.modal-body__thanks');
+        const modalVideo = document.querySelector('.modal-body__video');
         const tel1 = document.querySelector('#tel1');
         const tel2 = document.querySelector('#tel2');
         const email = document.querySelector('#email');
@@ -254,6 +260,25 @@
             email.value = '';
             check3.checked = false;
         });
+
+        tel1.addEventListener('input', function () {
+            setTimeout(() => {
+                this.value = validReackTel(this.value);
+            }, 200);
+        });
+
+        tel2.addEventListener('input', function () {
+            setTimeout(() => {
+                this.value = validReackTel(this.value);
+            }, 200);
+        });
+
+        function validReackTel(currentValue) {
+            currentValue = currentValue.trim();
+            const re = /[A-Za-zА-Яа-я]/g;
+            const validVal = currentValue.replace(re, "");
+            return validVal;
+        }
 
         form1.addEventListener('click', function () {
             const re = /\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/;
@@ -285,8 +310,32 @@
             modalBodyHome.classList.add('active');
         });
 
+        videoShowButton.addEventListener('click', function () {
+            openModal(event);
+            modalVideo.innerHTML = '<iframe ' +
+            'frameborder="0" allow="accelerometer; autoplay; ' +
+            'encrypted-media; gyroscope; picture-in-picture"' +
+            'allowfullscreen></iframe>';
+            modalVideo.children[0].src = urlVideo;
+            modalVideo.classList.add('active');
+            modalWindow.classList.add('p-0');
+        });
+
+        modalWrap.addEventListener('click', function () {
+            event.preventDefault();
+            closeAll();
+        });
+
+        modalWindow.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+
         modalClose.addEventListener('click', function () {
             event.preventDefault();
+            closeAll();
+        });
+
+        function closeAll() {
             modalWindow.classList.remove('link');
             modalBackgroup.classList.remove('active');
             modalWrap.classList.remove('active');
@@ -296,7 +345,10 @@
             modalBodyForm.classList.remove('active');
             email.value = '';
             bodys.classList.remove('overflow-hidden');
-        });
+            modalVideo.classList.remove('active');
+            modalVideo.innerHTML = '';
+            modalWindow.classList.remove('p-0');
+        }
 
         function openModal (event) {
             event.preventDefault();
@@ -316,7 +368,9 @@
             var myPhone = el.value;
             var valid = re.test(myPhone);
             return valid;
-        }  
+        } 
+                    
+    } 
     </script>
 </body>
 </html>
