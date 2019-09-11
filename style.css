@@ -47,11 +47,16 @@ header .custom-container {
 }
 .logo {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
-.logo__img {
+.logo a:not(.logo__text_link) {
+    display: block;
     height: 60px;
+    text-decoration: none;
+    color: #22313B;
+    font-size: 22px;
     margin-right: 10px;
+    font-weight: 600;
 }
 .logo__text {
     color: #22313B;
@@ -68,6 +73,7 @@ header .custom-container {
     font-family: sans-serif;
     font-weight: 600;
     font-size: 14px;
+    text-transform: uppercase;
 }
 .logo__text_link {
     font-family: sans-serif;
@@ -75,6 +81,7 @@ header .custom-container {
     color: #22313B;
     font-size: 13px;
     margin-top: 7px;
+    margin-left: -115px;
 }
 .label {
     margin-top: -21px;
@@ -232,8 +239,10 @@ header .custom-container {
 .buyout__form1 input[type="tel"],
 .buyout__form button[type="submit"],
 .buyout__form input[type="tel"] {
-    height: 60px;
+    min-height: 60px;
+    height: auto;
     padding: 0 20px;
+    border: none;
 }
 .modal__form input[type="email"],
 .buyout__form1 input[type="tel"],
@@ -322,9 +331,9 @@ header .custom-container {
 .buyout__form_checkbox input[type=checkbox],
 .buyout__form_checkbox1 input[type=checkbox]  {
     opacity: 0;
-    top: 11px;
-    left: 4px;
-    position: absolute;
+    top: 0px;
+    left: 17px;
+    position: relative;
 }
 .modal__form_checkbox input[type=checkbox]:checked + label::before,
 .buyout__form_checkbox input[type=checkbox]:checked + label::before,
@@ -736,6 +745,15 @@ header .custom-container {
         background: #E3ECF2;
         padding-bottom: 0;
     }
+    .logo__text_body {
+        font-size: 10px;
+    }
+    .logo a:not(.logo__text_link) {
+        line-height: 35px;
+    }
+    .logo {
+        align-items: center;
+    }
     .label {
         position: absolute;
         top: 0;
@@ -785,14 +803,21 @@ header .custom-container {
     .appraiser {
         padding-bottom: 80px;
         background: url(img/modal/bg-mobile-bottom.png) no-repeat center bottom;
-        background-size: contain!important;
+        background-size: 100%!important;
     }
     .buyout__form {
         padding-top: 15px;
+        width: 100%;
+    }
+    .buyout__form1 {
+        width: 100%;
     }
     .buyout__head {
         margin: 0 auto;
         text-align: center;
+    }
+    .buyout__head {
+        font-size: 30px;
     }
     .buyout__head span {
         font-size: 25px;
@@ -837,16 +862,17 @@ header .custom-container {
     .modal__form input[type="email"],
     .buyout__form input[type="tel"],
     .buyout__form1 input[type="tel"] {
-        max-width: 300px;
+        max-width: 100%;
         border-color: #0066C9;
         border-radius: 6px!important;
-        border-width: 2px;
+        border-width: 3px;
         margin-bottom: 10px;
     }
     .modal__form button[type="submit"],
     .buyout__form1 button[type="submit"],
     .buyout__form button[type="submit"] {
         background: #0066C9;
+        border-color: #0066C9;
         border-radius: 6px!important;
         border-width: 2px;
         margin-left: 0;
@@ -861,8 +887,10 @@ header .custom-container {
     .modal__form_checkbox,
     .buyout__form_checkbox,
     .buyout__form_checkbox1 {
-        max-width: 300px;
+        max-width: 100%;
         margin: 0 auto;
+        display: flex;
+        justify-content: center;
     }
     .modal__form_checkbox label, .buyout__form_checkbox label,
     .buyout__form_checkbox1 label {
@@ -872,6 +900,7 @@ header .custom-container {
     .buyout__form_checkbox label::before, 
     .buyout__form_checkbox1 label::before {
         background: #0066C9;
+        margin-top: -5px;
     }
     
     .buyout__price span {
@@ -900,14 +929,18 @@ header .custom-container {
     }
     .buyout__head_link-black {
         text-decoration: none!important;
+        color: red;
+        border-bottom: 4px dashed red;
     }
     .buyout__form input[type="tel"], .buyout__form1 input[type="tel"] {
-        width: 70%;
+        width: 100%;
+        padding-right: 5px;
         min-width: 300px;
     }
     .buyout__form1 button[type="submit"], .buyout__form button[type="submit"] {
-        width: 30%;
+        width: 100%;
         min-width: 300px;
+        font-size: 30px;
     }
     .watch-video {
         position: relative;
@@ -1009,9 +1042,6 @@ header .custom-container {
     }
 }
 @media (max-width: 768px) {
-    .buyout__head {
-        font-size: 25px;
-    }
     .buyout__head_link-blue::after,
     .buyout__head_link-black::after {
         content: none;
@@ -1063,8 +1093,33 @@ header .custom-container {
     .label__place, .label__pravo {
         font-size: 14px;
     }
+    .buyout__head {
+        line-height: 46px;
+        font-size: 42px;
+    }
+    .buyout__head span {
+        display: block;
+        padding-top: 15px;
+    }
+    .buyout__form1 button[type="submit"],
+    .buyout__form button[type="submit"] {
+        font-size: 25px;
+    }
 }
 @media (max-width: 480px) {
+    .buyout__head {
+        line-height: 35px;
+        font-size: 35px;
+    }
+    .buyout__form1 button[type="submit"],
+    .buyout__form button[type="submit"] {
+        font-size: 22px;
+    }
+    .buyout__head span {
+        display: block;
+        font-size: 22px;
+        padding-top: 15px;
+    }
     .buyout__price:before {
         left: 3%;
     }
