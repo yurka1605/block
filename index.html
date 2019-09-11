@@ -15,7 +15,7 @@
         <header>
             <div class="header custom-container">
                 <div class="logo">
-                    <img class="logo__img" src="img/logo.svg" alt="logo">
+                    <a href="#"><img class="logo__img" src="img/logo.svg" alt="logo"></a>
                     <div class="logo__text">
                         <span class="logo__text_head">Высшая Инстанция</span>
                         <span class="logo__text_body">Юридический консорциум</span>
@@ -25,7 +25,7 @@
                 <div class="label">
                     <div class="label__rect">
                         <span class="label__place"><img src="img/ribbon-badge-award.svg" alt="badge-award"> 2 место</span>
-                        <span class="label__pravo">в рейтинге <a href="https://pravo.ru">pravo.ru</a> на 2017</span>
+                        <span class="label__pravo">в рейтинге<a href="https://pravo.ru" target="_blanck">pravo.ru</a> на 2017</span>
                     </div>
                 </div>
                 <div class="phone">
@@ -69,7 +69,7 @@
                 <div class="watch-video">
                     <div class="watch-video__clip">
                         <div class="watch-video__play">
-                            <a class="watch-video__play-link" href="#" target="_blank">
+                            <a class="watch-video__play-link" href="#">
                                 <span class="watch-video__play-triangle"></span>
                             </a>
                             <div class="watch-video__play-label">
@@ -191,19 +191,115 @@
                             <a href="#" target="_blank">Залог</a>
                         </div>
                     </div>
+                    <div class="modal-body__form">
+                        <div class="modal__form">
+                            <h3>
+                                Часто, телефоны случайно оставляют клиенты,
+                                не заинтересованные в юридической консультации
+                            </h3>
+                            <br>
+                            <p>
+                                Введите свой е-мэил, в целях подтверждение, вашего желания получить бесплатную
+                                консультацию от профильного юриста по вашему вопросу
+                            </p>
+                            <br>
+                            <form action="#" method="post">
+                                <div class="modal__form-enter">
+                                    <input type="email" name="email" id="email" placeholder="example@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" required>
+                                    <button type="submit">Подтвердить</button>
+                                </div>
+                                <div class="modal__form_checkbox">
+                                    <input required type="checkbox" id="modalCheck">
+                                    <label for="modalCheck">Я согласен с политикой конфиденциальностии даю согласие на обработку моих&nbsp;<a href="#">персональных данных</a></label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-body__thanks">
+                        <div class="modal-body__thanks_checkbox">&#10004;</div>
+                        <div class="modal-body__thanks_text">
+                            <h3>Спасибо за заявку!</h3>
+                            <p>В ближайшее время наш специалист свяжется с вами.</p>
+                        </div>
+                    </div>
+                    <div class="modal-body__video"></div>
                 </div>
             </div>
         </div>
     </main>
     <script>
+    window.onload = function() {
+        const urlVideo = 'https://www.youtube.com/embed/nRhWUhDeYWY';
+
         const linkBlack = document.querySelector('.buyout__head_link-black');
         const linkBlue = document.querySelector('.buyout__head_link-blue');
+        const videoShowButton = document.querySelector('.watch-video__play-link ');
+        const form1 = document.querySelector('.buyout__form-enter button');
+        const form2 = document.querySelector('.buyout__form-enter1 button');
+        const formModal = document.querySelector('.modal__form-enter button');
+
         const modalBackgroup = document.querySelector('.modal-backgroup');
         const modalWrap = document.querySelector('.modal-wrap');
         const modalWindow = document.querySelector('.modal-window');
         const modalClose = document.querySelector('.modal-close');
         const modalBodyHome = document.querySelector('.modal-body__home');
         const modalBodyProblem = document.querySelector('.modal-body__problem');
+        const modalBodyForm = document.querySelector('.modal-body__form');
+        const modalThanks = document.querySelector('.modal-body__thanks');
+        const modalVideo = document.querySelector('.modal-body__video');
+        const tel1 = document.querySelector('#tel1');
+        const tel2 = document.querySelector('#tel2');
+        const email = document.querySelector('#email');
+        const check1 = document.querySelector('#check');
+        const check2 = document.querySelector('#check1');
+        const check3 = document.querySelector('#modalCheck');
+        const bodys = document.querySelector('body');
+
+        formModal.addEventListener('click', function () {
+            if (!validMail(email) || !check3.checked) return;
+            openModal(event);
+            modalThanks.classList.add('active');
+            modalBodyForm.classList.remove('active');
+            email.value = '';
+            check3.checked = false;
+        });
+
+        tel1.addEventListener('input', function () {
+            setTimeout(() => {
+                this.value = validReackTel(this.value);
+            }, 200);
+        });
+
+        tel2.addEventListener('input', function () {
+            setTimeout(() => {
+                this.value = validReackTel(this.value);
+            }, 200);
+        });
+
+        function validReackTel(currentValue) {
+            currentValue = currentValue.trim();
+            const re = /[A-Za-zА-Яа-я]/g;
+            const validVal = currentValue.replace(re, "");
+            return validVal;
+        }
+
+        form1.addEventListener('click', function () {
+            const re = /\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/;
+            if (!validPhone(tel1, re) || !check1.checked) return;
+            openModal(event);
+            modalBodyForm.classList.add('active');
+            check1.checked = false;
+            tel1.value = ''; 
+        });
+
+        form2.addEventListener('click', function () {
+            const re = /\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/;
+            if (!validPhone(tel2, re) || !check2.checked) return;
+            openModal(event);
+            modalBodyForm.classList.add('active');
+            check2.checked = false;
+            tel2.value = ''; 
+        });
 
         linkBlack.addEventListener('click', function () {
             openModal(event);
@@ -217,20 +313,67 @@
             modalBodyHome.classList.add('active');
         });
 
+        videoShowButton.addEventListener('click', function () {
+            openModal(event);
+            modalVideo.innerHTML = '<iframe ' +
+            'frameborder="0" allow="accelerometer; autoplay; ' +
+            'encrypted-media; gyroscope; picture-in-picture"' +
+            'allowfullscreen></iframe>';
+            modalVideo.children[0].src = urlVideo;
+            modalVideo.classList.add('active');
+            modalWindow.classList.add('p-0');
+        });
+
+        modalWrap.addEventListener('click', function () {
+            event.preventDefault();
+            closeAll();
+        });
+
+        modalWindow.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+
         modalClose.addEventListener('click', function () {
             event.preventDefault();
+            closeAll();
+        });
+
+        function closeAll() {
             modalWindow.classList.remove('link');
             modalBackgroup.classList.remove('active');
             modalWrap.classList.remove('active');
             modalBodyHome.classList.remove('active');
             modalBodyProblem.classList.remove('active');
-        });
+            modalThanks.classList.remove('active');
+            modalBodyForm.classList.remove('active');
+            email.value = '';
+            bodys.classList.remove('overflow-hidden');
+            modalVideo.classList.remove('active');
+            modalVideo.innerHTML = '';
+            modalWindow.classList.remove('p-0');
+        }
 
         function openModal (event) {
             event.preventDefault();
             modalBackgroup.classList.add('active');
             modalWrap.classList.add('active');
+            bodys.classList.add('overflow-hidden');
         }
+
+        function validMail(el) {
+            var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+            var myMail = el.value;
+            var valid = re.test(myMail);
+            return valid;
+        }
+        
+        function validPhone(el,re) {
+            var myPhone = el.value;
+            var valid = re.test(myPhone);
+            return valid;
+        } 
+                    
+    } 
     </script>
 </body>
 </html>
