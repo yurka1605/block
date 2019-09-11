@@ -878,7 +878,8 @@ header .custom-container {
         height: 50%;
     }
     .buyout__form button[type="submit"] ,
-    .buyout__form1 button[type="submit"] {
+    .buyout__form1 button[type="submit"],
+    .modal__form button[type="submit"] {
         text-align: center;
         padding-left: 20px;
     }
@@ -958,12 +959,21 @@ header .custom-container {
         color: red;
         border-bottom: 4px dashed red;
     }
-    .buyout__form input[type="tel"], .buyout__form1 input[type="tel"] {
+    .buyout__form input[type="tel"],
+    .buyout__form1 input[type="tel"] {
         width: 100%;
         padding-right: 5px;
         min-width: 300px;
     }
-    .buyout__form1 button[type="submit"], .buyout__form button[type="submit"] {
+    .modal__form-enter{
+        display: flex;
+        flex-direction: column;
+    }
+    .modal__form button[type="submit"] {
+        font-size: 30px;
+    }
+    .buyout__form1 button[type="submit"],
+    .buyout__form button[type="submit"]  {
         width: 100%;
         min-width: 300px;
         font-size: 30px;
@@ -1084,6 +1094,18 @@ header .custom-container {
     }
     .buyout__form_checkbox {
         display: block;
+    }
+    .modal__form_checkbox input[type=checkbox],
+    .buyout__form_checkbox input[type=checkbox], 
+    .buyout__form_checkbox1 input[type=checkbox] {
+        position: absolute;
+        top: 11px;
+        left: 4px;
+    }
+    .modal__form_checkbox label::before,
+    .buyout__form_checkbox label::before,
+    .buyout__form_checkbox1 label::before {
+        margin-top: 0;
     }
     .buyout__form-enter1::before {
         height: 66px;
