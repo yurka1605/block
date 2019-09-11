@@ -1077,6 +1077,14 @@ header .custom-container {
         padding-left: 25%;   
     }
 }
+@media (orientation: landscape) {
+    .modal-body__problem_links a {
+        height: auto;
+    }
+    .modal-body__problem.active {
+        background-size: 100% 100%;
+    }
+}
 @media (max-width: 768px) {
     .buyout__head_link-blue::after,
     .buyout__head_link-black::after {
