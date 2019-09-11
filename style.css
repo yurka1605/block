@@ -618,6 +618,9 @@ header .custom-container {
     margin-left: -6%;
     padding-left: 0%;
 }
+.phone-mobile {
+    display: none;   
+}
 /* END:modal-window */
 
 /* media */
@@ -638,14 +641,39 @@ header .custom-container {
     }
 }
 @media (max-width: 992px) {
-    header .custom-container {
-        flex-direction: column;
-    }
     .label {
-        margin-top: 10px;
-        margin-bottom: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: auto;
+        background: #22313b;
+        margin-top: 0px;
         clip-path: none;
         width: 100%;
+        z-index: 10;
+    }
+    .label__place img {
+        display: none;
+    }
+    .label__place,
+    .label__pravo {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .label__rect {
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+    .phone-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .phone {
+        display: none;
+    }
+    header .custom-container {
+        padding: 40px 0;
     }
     .logo {
         justify-content: center;
@@ -654,12 +682,30 @@ header .custom-container {
         height: auto;
         flex-direction: column;
     }
-    .buyout__price,
-    .buyout__head {
-        text-align: center;
-    }
     .buyout__form {
         padding-top: 15px;
+    }
+    .buyout__head_link-blue {
+        text-decoration: none;
+        border-bottom: 4px dashed #508fcf;
+    }
+    .buyout__price {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+    .buyout__price span {
+        background: transparent;
+    }
+    .buyout__price_scope,
+    .buyout__price_per {
+        width: 280px;
+    }
+    .buyout__head_link-black {
+        text-decoration: none!important;
     }
     .buyout__form input[type="tel"], .buyout__form1 input[type="tel"] {
         width: 70%;
@@ -706,10 +752,6 @@ header .custom-container {
     .buyout__head_link-blue::after,
     .buyout__head_link-black::after {
         content: none;
-    }
-    .buyout__head_link-blue,
-    .buyout__head_link-black {
-        text-decoration: underline;
     }
     .buyout__form-enter,
     .buyout__form-enter1 {
