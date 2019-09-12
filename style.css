@@ -549,6 +549,7 @@ header .custom-container {
 }
 .modal-body__problem {
     background-image: url(img/modal/bg-problem.png);
+    background-image: url(img/modal/bg-problem.webp);
 }
 .modal-body__home.active {
     display: flex;
@@ -824,11 +825,13 @@ header .custom-container {
     .buyout {
         padding-bottom: 100px;
         background: url(img/modal/bg-mobile-top.png) no-repeat center;
+        background: url(img/modal/bg-mobile-top.webp) no-repeat center;
         background-size: cover;
     }
     .appraiser {
         padding-bottom: 80px;
         background: url(img/modal/bg-mobile-bottom.png) no-repeat center bottom;
+        background: url(img/modal/bg-mobile-bottom.webp) no-repeat center bottom;
         background-size: 100%!important;
     }
     .buyout__form {
@@ -1005,6 +1008,7 @@ header .custom-container {
         align-items: flex-end;
         justify-content: center;
         background: url(img/bg-video-mobile.png) no-repeat center;
+        background: url(img/bg-video-mobile.webp) no-repeat center;
         background-size: cover;
     }
     .watch-video__play-link {
