@@ -29,7 +29,6 @@ main {
     background: url(img/bg.png) no-repeat center;
     background: url(img/bg.webp) no-repeat center;
     background-size: cover;
-    padding-bottom: 150px;
 }
 .custom-container {
     max-width: 1280px;
@@ -360,22 +359,25 @@ header .custom-container {
     display: flex;
     align-items: center;
     overflow: hidden;
+    padding: 15px;
+    background: #fff;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
 }
 .watch-video__play-link {
     z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    border: 5px solid #00B75A;
-    background: #fff;
+    background: #434664;
 }
 .watch-video__play-triangle {
     display: block;
     clip-path: polygon(100% 50%, 0 0, 0 100%);
-    background: #00B75A;
+    background: #fff;
     width: 30px;
     height: 38px;
     margin-left: 6px;
@@ -383,37 +385,24 @@ header .custom-container {
 .watch-video__play-label {
     z-index: 1;
     background: #fff;
-    padding: 8px 20px;
-    padding-right: 100px;
+    color: #434664;
+    padding: 0 20px;
+    padding-right: 95px;
     line-height: 16px;
     margin-left: -13px;
-    font-size: 9px;
-}
-/* END:communication */
-
-/* appraiser */
-.appraiser {
-    width: calc(100% - 200px);
-    padding: 25px 18px 10px;
-    margin: 0 auto;
-}
-.appraiser__cards {
-    display: flex;
-    justify-content: center;
-}
-.appraiser__cards_card {
-    display: flex;
-    flex: 0 0 43%;
-}
-.appraiser__cards_card div {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-.appraiser__cards_card span {
+    font-size: 12px;
     font-weight: 600;
 }
-/* END:appraiser */
+.watch-video__play-label_text-top {
+    font-size: 10px;
+    opacity: 0.8;
+}
+.watch-video__play-label_text-bottom {
+    font-size: 10px;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+/* END:communication */
 
 /* modal-window */
 .modal-backgroup {
