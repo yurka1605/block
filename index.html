@@ -13,60 +13,93 @@
 <body>
     <main>
         <header>
+            <div class="header-nav">
+                <ul>
+                    <li>
+                        <span class="header-nav__span">24/7</span>
+                        Юристы&nbsp;<span class="header-nav__span_green">доступны</span>
+                    </li>
+                    <li>
+                        <span class="header-nav__span">9.8/10</span>
+                        Рейтинг &nbsp;<a class="header-nav__link" href="#">по отзывам</a>
+                    </li>
+                    <li>
+                        <img src="img/TV.png" alt="TV">
+                        <a class="header-nav__link" href="#">Мы в СМИ</a>
+                    </li>
+                    <li>
+                        <img src="img/video-camera.png" alt="videoblog">
+                        <a class="header-nav__link" href="#">Видеоблог</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <img src="img/address.png" alt="Address">
+                        <a class="header-nav__link" href="#">Офисы в СПб и ЛО</a>
+                    </li>
+                    <li><a class="header-nav__link_tel" href="tel:88005006696">8 (800) 500-66-96</a></li>
+                    <li><a class="header-nav__link_tel" href="tel:88128482361">8 (812) 848-23-61</a></li>
+                </ul>
+            </div>
             <div class="header custom-container">
                 <div class="logo">
                     <a href="#"><img class="logo__img" src="img/logo.svg" alt="logo"></a>
                     <div class="logo__text">
                         <span class="logo__text_head">Высшая Инстанция</span>
-                        <span class="logo__text_body">Юридический консорциум</span>
-                        <a class="logo__text_link" href="#">Перейти на основной сайт <img src="img/arrow-link.png" alt="arrow"></a>
+                        <span class="logo__text_body">Специализированный юридический консорциум №1</span>
                     </div>
                 </div>
-                <div class="label">
-                    <div class="label__rect">
-                        <span class="label__place"><img src="img/ribbon-badge-award.svg" alt="badge-award"> 2 место</span>
-                        <span class="label__pravo">в рейтинге <a href="https://pravo.ru" target="_blanck">pravo.ru</a> на 2017</span>
-                    </div>
+                <div class="ctx-menu">
+                    <ul>
+                        <li><a href="#">Специализация</a></li>
+                        <li><a href="#">Услуги</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
                 </div>
-                <div class="phone">
-                    8 (812) 748-23-61
+                <div class="menu-btn">
+                    Меню
+                    <span>
+                        <i></i>
+                    </span>
                 </div>
-                <a class="phone-mobile" href="tel:88127482361">
-                    <img src="img/phone.png" alt="phone">
-                </a>
             </div>
         </header>
         <div class="main-section">
-            <div class="communication">
+            <div class="communication custom-container">
                 <div class="buyout">
-                    <div class="buyout__head custom-container">
-                        Срочный выкуп <a class="buyout__head_link-blue" href="#">недвижимости</a><br>
-                        <span>с любыми <a class="buyout__head_link-black" href="#">проблемами</a></span>
+                    <div class="buyout__head">
+                        Эффективная помощь юриста
+                        с опытом по вашему вопросу
                     </div>
-                    <div class="buyout__price custom-container">
-                        <div class="buyout__price_per">
-                            <span>за 75%-97%</span>
-                            от стоимости
-                        </div>
-                        <div class="buyout__price_scope">
-                            <span>от 500 000 до 1 000 000 руб.</span> 
-                            аванс наличными на руки
-                        </div>
+                    <div class="buyout__price">
+                        Опытные юристы круглосуточно готовы встать на вашу защиту.
+                        Помогаем справится с проблемами 30 направлениях.
                     </div>
-                    <div class="buyout__form custom-container">
+                    <div class="buyout__label">
+                        <span class="buyout__label_place">2 место</span>
+                        <span class="buyout__label_pravo">
+                            по рейтингу юридических фирм
+                            в России 2017 года <a href="https://pravo.ru" target="_blanck">pravo.ru</a>
+                        </span>
+                    </div>
+                    <div class="buyout__form">
                         <form action="#" method="post">
-                            <div class="buyout__form-enter">
-                                <input type="tel" name="tel" id="tel1" maxlength="18" placeholder="+7 (930) 128-00-48" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required>
-                                <button type="submit">Хочу <span>получить</span>деньги сегодня</button>
-                            </div>
                             <div class="buyout__form_checkbox">
                                 <input required type="checkbox" name="check" id="check">
                                 <label for="check">Я согласен с политикой конфиденциальностии даю согласие на обработку моих&nbsp;<a href="#">персональных данных</a></label>
                             </div>
+                            <div class="buyout__form-enter">
+                                <input type="tel" name="tel" id="tel1" maxlength="18" placeholder="+7 (930) 128-00-48" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required>
+                                <button type="submit">Хочу <span>получить</span>деньги сегодня</button>
+                            </div>
+                            <div class="buyout__form_checkbox1">
+                                <label for="check1">Я согласен с политикой конфиденциальностии даю согласие на обработку моих&nbsp;<a href="#">персональных данных</a></label>
+                            </div>
                         </form>
                     </div>
                 </div>
-                <div class="watch-video custom-container">
+                <div class="watch-video">
                     <div class="watch-video__clip">
                         <div class="watch-video__play">
                             <a class="watch-video__play-link" href="#">
