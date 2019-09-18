@@ -140,6 +140,17 @@ header .custom-container {
     font-weight: 600;
     letter-spacing: 3px;
 }
+.ctx-menu > a {
+    display: none;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 50%;
+    background-color: #18952d;
+}
 .ctx-menu {
     display: flex;
     align-items: center;
@@ -195,7 +206,8 @@ header .custom-container {
 /* communication */
 .communication {
     display: flex;
-    height: 500px;
+    height: 556px;
+
 }
 .buyout {
     flex: 0 0 63%;
@@ -239,8 +251,96 @@ header .custom-container {
 .buyout__label_pravo a {
     color: #00B75A;
 }
-.buyout__form,
-.buyout__form1
+.buyout__form {
+    position: relative;
+    border: 2px solid #d7d8de;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 30px;
+    width: fit-content;
+    border-bottom-left-radius: 20px;
+    background: #fff;
+}
+.buyout__form_badge {
+    position: absolute;
+    right: -25px;
+    top: -20px;
+    background: #fff;
+    color: #00b75a;
+    line-height: 1;
+    z-index: 1;
+    text-transform: uppercase;
+    font-size: 53px;
+    font-weight: 600;
+    padding: 2px;
+    background-color: #00b75a;
+    clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 5% 49%);
+}
+.buyout__form_badge-in {
+    background: #fff;
+    clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 5% 49%);
+    padding: 7px 15px 7px 20px;
+}
+.buyout__form_badge span {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.buyout__form_top {
+    font-size: 22px;
+    font-weight: 700;
+    color: #253640;
+    line-height: 1;
+    padding-bottom: 10px; 
+}
+.buyout__form_top span {
+    color: #f12126;
+    position: relative;
+    font-size: 18px;
+}
+.buyout__form_top span sup {
+    font-size: 10px;
+}
+.buyout__form_top span::before {
+    content: '';
+    height: 2px;
+    width: 110%;
+    position: absolute;
+    bottom: 45%;
+    left: -5%;
+    transform: rotate(-15deg);
+    background: #f12126;
+}
+.buyout__form_head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.buyout__form_time {
+    margin-right: 25px;
+}
+.buyout__form_time a {
+    color: #d7d7d7;
+}
+.buyout__form_time span {
+    margin-right: 20px;
+}
+.buyout__form_bottom {
+    color: #b6b6b6;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.buyout__form_bottom a {
+    color: #32ba7c;
+}
+.buyout__form_bottom span {
+    padding: 2px 3px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    line-height: 1;
+    background: #32ba7c;
+}
 .modal__form {
     padding-top: 44px;
 }
@@ -253,14 +353,16 @@ header .custom-container {
 .buyout__form-enter1 {
     display: flex;
 }
-.buyout__form-enter1 {
+.buyout__form-enter {
     position: relative;
 }
-.buyout__form-enter1::before {
+.buyout__form-enter::before {
     content: '+7';
+    line-height: 1;
     font-size: 30px;
     position: absolute;
     top: 0;
+    color: #838388;
     left: 20px;
     display: flex;
     align-items: center;
@@ -271,9 +373,9 @@ header .custom-container {
 .buyout__form input[type="tel"],
 .buyout__form1 input[type="tel"] {
     font-size: 30px;
-    max-width: 400px;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    max-width: 300px;
+    border-radius: 4px;
+    background: #f4f9fc;
 }
 .modal__form input[type="email"] {
     max-width: 300px;
@@ -294,7 +396,7 @@ header .custom-container {
 .modal__form input[type="email"],
 .buyout__form1 input[type="tel"],
 .buyout__form input[type="tel"] {
-    border: 2px solid #00B75A;
+    border: 2px solid #ffa108;
 }
 .buyout__form1 input[type="tel"] {
     padding-left: 60px;
@@ -302,47 +404,38 @@ header .custom-container {
 .modal__form button[type="submit"],
 .buyout__form1 button[type="submit"],
 .buyout__form button[type="submit"] {
-    background: #00B75A;
-    margin-left: -5px;
+    background: rgb(255,161,8);
+    background: linear-gradient(90deg, rgba(255,161,8,1) 0%, rgba(255,128,8,1) 51%, rgba(255,84,7,1) 100%);
+    margin-left: 10px;
+    letter-spacing: 1.5px;
     color: #fff;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    font-weight: 800;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
     text-align: left;
+    border: 0;
     position: relative;
-    padding-left: 67px;
+}
+.buyout__form input[type="tel"] {
+    padding-left: 60px;
+    color: #838388;
 }
 .modal__form button[type="submit"] {
     padding-left: 20px;
-}
-.buyout__form1 button[type="submit"]::after,
-.buyout__form button[type="submit"]::after {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 15px;
-    display: block;
-    background: url(img/hand.svg) no-repeat;
-    background-size: contain;
-    width: 42px;
-    height: 44px;
-}
-.buyout__form1 button[type="submit"]::after {
-    background: url(img/eye.png) no-repeat;
-    width: 39px;
-    height: 21px;
-    top: 20px;
 }
 .modal__form_checkbox,
 .buyout__form_checkbox,
 .buyout__form_checkbox1 {
     padding-top: 8px;
     position: relative;
+    display: flex;
+}
+.buyout__form_checkbox {
+    padding-top: 0;
 }
 .modal__form_checkbox label,
 .buyout__form_checkbox label,
 .buyout__form_checkbox1 label {
-    text-transform: uppercase;
     position: relative;
     padding-left: 25px;
     font-size: 9px;
@@ -350,10 +443,8 @@ header .custom-container {
     height: 20px;
     align-items: center;
 }
-.modal__form_checkbox label a,
-.buyout__form_checkbox label a,
-.buyout__form_checkbox1 label a {
-    color: #253640;
+.buyout__form_checkbox1 label {
+    padding-right: 20px;
 }
 .modal__form_checkbox label::before,
 .buyout__form_checkbox label::before,
@@ -373,6 +464,16 @@ header .custom-container {
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
+}
+.buyout__form_checkbox label {
+    padding-left: 20px;
+}
+.buyout__form_checkbox label::before {
+    border-radius: 4px;
+    height: 15px;
+    width: 15px;
+    top: 2px;
+    background-color: #a6a6a6;
 }
 .buyout__form_checkbox1 label::before {
     content: '\2714';
@@ -768,11 +869,20 @@ header .custom-container {
     .phone {
         font-size: 30px;
     }
+    .header-nav {
+        display: none;
+    }
+    .ctx-menu ul {
+        display: none;
+    }
     .watch-video__clip {
         padding-bottom: 100px;
     }
     .buyout__head {
         font-size: 30px;
+    }
+    .ctx-menu > a {
+        display: flex;
     }
     .modal-body__problem {
         width: 100%;
@@ -784,6 +894,15 @@ header .custom-container {
     main {
         background: #E3ECF2;
         padding-bottom: 0;
+    }
+    .menu-btn {
+        font-size: 0;
+    }
+    .buyout__price {
+        display: none!important;
+    }
+    .buyout__label {
+        justify-content: center;
     }
     .label {
         position: absolute;
@@ -826,6 +945,9 @@ header .custom-container {
         height: auto;
         flex-direction: column;
     }
+    .communication.custom-container {
+        width: 100vw!important;
+    }
     .buyout {
         padding-bottom: 100px;
         background-size: cover;
@@ -837,7 +959,18 @@ header .custom-container {
         background-size: contain!important;
     }
     .buyout__form {
-        padding-top: 15px;
+        width: auto;
+        border-radius: 0;
+    }
+    .buyout__form_badge {
+        display: none;
+    }
+    .buyout__form_top {
+        display: flex;
+        justify-content: center;
+    }
+    .buyout__form_top span {
+        display: none;
     }
     .buyout__head {
         margin: 0 auto;
@@ -846,34 +979,15 @@ header .custom-container {
     .buyout__head span {
         font-size: 25px;
     }
-    .buyout__head_link-blue {
-        text-decoration: none;
-        border-bottom: 4px dashed #508fcf;
-    }
-    .buyout__head_link-black:after,
-    .buyout__head_link-blue:after {
-        content: '';
-        background: transparent;
-    }
-    .buyout__price {
-        position: relative;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        margin-top: 10px;
-        color: #676F75;
-        opacity: 0.7;
-    }
     .buyout__form-enter,
     .buyout__form-enter1 {
-        flex-direction: column;
-        align-items: center;
+        justify-content: space-between;
     }
-    .buyout__form-enter1::before {
+    .buyout__form-enter::before {
         height: 50%;
+    }
+    .logo__text_body {
+        display: none;
     }
     .buyout__form button[type="submit"] ,
     .buyout__form1 button[type="submit"] {
@@ -887,7 +1001,6 @@ header .custom-container {
     .buyout__form input[type="tel"],
     .buyout__form1 input[type="tel"] {
         max-width: 300px;
-        border-color: #0066C9;
         border-radius: 6px!important;
         border-width: 2px;
         margin-bottom: 10px;
@@ -895,7 +1008,6 @@ header .custom-container {
     .modal__form button[type="submit"],
     .buyout__form1 button[type="submit"],
     .buyout__form button[type="submit"] {
-        background: #0066C9;
         border-radius: 6px!important;
         border-width: 2px;
         margin-left: 0;
@@ -907,20 +1019,12 @@ header .custom-container {
     .buyout__form button[type="submit"]::after {
         background: transparent;
     }
-    .modal__form_checkbox,
-    .buyout__form_checkbox,
-    .buyout__form_checkbox1 {
-        max-width: 300px;
-        margin: 0 auto;
-    }
     .modal__form_checkbox label, .buyout__form_checkbox label,
     .buyout__form_checkbox1 label {
         display: block;
     }
-    .modal__form_checkbox label::before, 
-    .buyout__form_checkbox label::before, 
-    .buyout__form_checkbox1 label::before {
-        background: #0066C9;
+    .buyout__form_checkbox1 {
+        display: none;
     }
     
     .buyout__price span {
@@ -1007,6 +1111,7 @@ header .custom-container {
         flex-direction: column;
         height: 75%;
         justify-content: space-between;
+        background-color: transparent;
     }
     .watch-video__play-label {
         background: transparent;
