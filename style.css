@@ -443,6 +443,9 @@ header .custom-container {
     height: 20px;
     align-items: center;
 }
+.buyout__form_checkbox label span {
+    font-size: 0;
+}
 .buyout__form_checkbox1 label {
     padding-right: 20px;
 }
@@ -946,7 +949,8 @@ header .custom-container {
         flex-direction: column;
     }
     .communication.custom-container {
-        width: 100vw!important;
+        max-width: 100%;
+        margin: 0;
     }
     .buyout {
         padding-bottom: 100px;
@@ -1219,8 +1223,35 @@ header .custom-container {
     }
 }
 @media (max-width: 480px) {
-    .buyout__price:before {
-        left: 3%;
+    .buyout__form_time span {
+        margin-right: 5px;
+    }
+    .buyout__form_checkbox label {
+        font-size: 0;
+    }
+    .buyout__form_checkbox label span {
+        font-size: 9px;
+    }
+    .buyout__label_pravo {
+        max-width: 183px;
+    }
+    .buyout__label_place {
+        display: flex;
+        align-items: center;
+    }
+    .buyout__form input[type="tel"],
+    .buyout__form1 input[type="tel"] {
+        min-width: auto;
+    }
+    .buyout__form1 button[type="submit"],
+    .buyout__form button[type="submit"] {
+        min-width: auto;
+    }
+    .buyout__form_head {
+        justify-content: space-between;
+    }
+    .buyout__form_time {
+        margin-right: 5px;
     }
     .watch-video__play-label {
         font-size: 22px;
