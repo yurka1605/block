@@ -884,6 +884,7 @@ header .custom-container {
         padding-bottom: 100px;
     }
     .buyout__head {
+        padding: 0 30px;
         font-size: 30px;
     }
     .ctx-menu > a {
@@ -897,8 +898,10 @@ header .custom-container {
 }
 @media (max-width: 992px) {
     main {
-        background: #E3ECF2;
+        background: url(img/modal/bg-mobile-top.png) no-repeat center;
+        background: url(img/modal/bg-mobile-top.webp) no-repeat center;
         padding-bottom: 0;
+        background-size: cover;
     }
     .menu-btn {
         font-size: 0;
@@ -969,8 +972,8 @@ header .custom-container {
     .buyout {
         padding-bottom: 100px;
         background-size: cover;
-        background: url(img/modal/bg-mobile-top.png) no-repeat center;
-        background: url(img/modal/bg-mobile-top.webp) no-repeat center;
+        /* background: url(img/modal/bg-mobile-top.png) no-repeat center;
+        background: url(img/modal/bg-mobile-top.webp) no-repeat center; */
     }
     .buyout__form {
         width: auto;
@@ -1016,12 +1019,20 @@ header .custom-container {
         border-width: 2px;
         margin-bottom: 10px;
     }
+    .buyout__form input[type="tel"] {
+        max-width: 48%;
+        flex: 1 1 48%;
+    }
     .modal__form button[type="submit"],
     .buyout__form1 button[type="submit"],
     .buyout__form button[type="submit"] {
         border-radius: 6px!important;
         border-width: 2px;
         margin-left: 0;
+    }
+    .buyout__form button[type="submit"] {
+        max-width: 48%;
+        flex: 1 1 48%;
     }
     .buyout__form button[type="submit"] span {
         display: none;
@@ -1135,43 +1146,8 @@ header .custom-container {
         font-weight: 600;
         margin-left: 0;
     }
-    .appraiser {
-        width: 100%;
-    }
-    .appraiser__cards {
-        padding-bottom: 50px;
-        position: relative;
-        flex-direction: column;
-    }
-    .appraiser__cards_card {
-        flex: 0 0 100%;
-        width: 70%;
-        margin: 0 auto;
-        flex-direction: column;
-        align-items: center;
-        z-index: 1;
-    }
-    .appraiser__cards_card:first-child {
-        padding-bottom: 30px;
-    }
-    .appraiser__cards:before {
-        content: '';
-        position: absolute;
-        top: 30px;
-        left: 0;
-        display: block;
-        width: 108%;
-        height: 100%;
-        background: url(img/arrow-mobile.png) center no-repeat;
-    }
-    .appraiser__cards_card div {
-        text-align: center;
-    }
     .buyout__form1 {
         padding-top: 15px;
-    }
-    .modal-body__problem {
-        padding-left: 20%;   
     }
 }
 @media (max-width: 768px) {
@@ -1216,6 +1192,12 @@ header .custom-container {
     .buyout__price:before {
         left: 20%;
     }
+    .buyout__form input[type="tel"] {
+        flex: none;
+    }
+    .buyout__form button[type="submit"] {
+        flex: none;
+    }
 }
 @media (max-width: 540px) {
     .appraiser__cards_card {width: 100%}
@@ -1250,11 +1232,12 @@ header .custom-container {
         margin-top: 10px;
     }
     .buyout__label_place {
-       font-size: 18px;
+        font-size: 22px;
     }
     .buyout__label_pravo {
-        font-size: 10px;
-        padding: 0 5px 0 5px
+        font-size: 12px;
+        padding: 0;
+        padding-left: 5px;
     }
     .buyout__head {
         font-size: 22px;
@@ -1279,7 +1262,7 @@ header .custom-container {
         font-size: 9px;
     }
     .buyout__label_pravo {
-        max-width: 183px;
+        max-width: 220px;
     }
     .buyout__label_place {
         display: flex;
