@@ -105,6 +105,7 @@ header .custom-container {
 .logo {
     display: flex;
     align-items: center;
+    opacity: 0.85;
 }
 .logo__img {
     height: 60px;
@@ -206,7 +207,7 @@ header .custom-container {
 /* communication */
 .communication {
     display: flex;
-    height: 556px;
+    height: 700px;
 
 }
 .buyout {
@@ -216,11 +217,10 @@ header .custom-container {
     flex-direction: column;
 }
 .buyout__head {
-    font-size: 39px;
+    font-size: 51px;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    max-width: 600px;
-    color: #253640;
+    color: #374751;;
     margin-left: 0;
     margin-bottom: 15px;
 }
@@ -253,6 +253,7 @@ header .custom-container {
 }
 .buyout__form {
     position: relative;
+    box-shadow: 0px 0px 30px -9px rgba(55,71,81,1);
     border: 2px solid #d7d8de;
     margin-top: 50px;
     margin-bottom: 30px;
@@ -291,7 +292,7 @@ header .custom-container {
     font-weight: 700;
     color: #253640;
     line-height: 1;
-    padding-bottom: 10px; 
+    padding-bottom: 20px; 
 }
 .buyout__form_top span {
     color: #f12126;
@@ -426,7 +427,7 @@ header .custom-container {
 .modal__form_checkbox,
 .buyout__form_checkbox,
 .buyout__form_checkbox1 {
-    padding-top: 8px;
+    padding-top: 15px;
     position: relative;
     display: flex;
 }
@@ -441,6 +442,7 @@ header .custom-container {
     font-size: 9px;
     display: flex;
     height: 20px;
+    opacity: 0.7;
     align-items: center;
 }
 .buyout__form_checkbox label span {
@@ -504,7 +506,7 @@ header .custom-container {
     height: inherit;
     overflow: hidden;
     padding-left: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 20%;
     display: flex;
     align-items: flex-end;
     background: url(img/bg-small.png) no-repeat center;
@@ -523,6 +525,7 @@ header .custom-container {
     display: flex;
     align-items: center;
     overflow: hidden;
+    width: 95%;
     padding: 15px;
     background: #fff;
     border-bottom-left-radius: 50px;
@@ -551,7 +554,6 @@ header .custom-container {
     background: #fff;
     color: #434664;
     padding: 0 20px;
-    padding-right: 95px;
     line-height: 16px;
     margin-left: -13px;
     font-size: 12px;
@@ -901,8 +903,20 @@ header .custom-container {
     .menu-btn {
         font-size: 0;
     }
+    .buyout__label {
+        order: 1;
+    }
     .buyout__price {
         display: none!important;
+    }
+    .buyout__form_head {
+        justify-content: space-between;
+    }
+    .buyout__form_checkbox label {
+        line-height: 20px;
+    }
+    .buyout__form-enter::before {
+        height: calc(100% - 10px);
     }
     .buyout__label {
         justify-content: center;
@@ -986,9 +1000,6 @@ header .custom-container {
     .buyout__form-enter,
     .buyout__form-enter1 {
         justify-content: space-between;
-    }
-    .buyout__form-enter::before {
-        height: 50%;
     }
     .logo__text_body {
         display: none;
@@ -1167,12 +1178,14 @@ header .custom-container {
     }
 }
 @media (max-width: 768px) {
+    .logo__text_head {
+        font-size: 20px;
+    }
     .buyout__head {
         font-size: 25px;
     }
-    .buyout__head_link-blue::after,
-    .buyout__head_link-black::after {
-        content: none;
+    .buyout__form-enter::before {
+        height: calc(50% - 2.5px);
     }
     .buyout__form-enter,
     .buyout__form-enter1 {
@@ -1223,6 +1236,42 @@ header .custom-container {
     }
 }
 @media (max-width: 480px) {
+    .logo {
+        max-width: 150px;
+    }
+    .logo__img {
+        height: 40px;
+        margin-right: 5px;
+    }
+    .buyout__label {
+        margin-top: 0;
+    }
+    .logo__text_head {
+        font-size: 18px;
+    }
+    .buyout__form {
+        margin-top: 10px;
+    }
+    .buyout__label_place {
+       font-size: 18px;
+    }
+    .buyout__label_pravo {
+        font-size: 10px;
+        padding: 0 5px 0 5px
+    }
+    .buyout__head {
+        font-size: 22px;
+        padding: 20px;
+    }
+    .buyout__form_top {
+        font-size: 18px;
+    }
+    .buyout__form_bottom {
+        font-size: 13px;
+    }
+    .buyout__form button[type="submit"] {
+        font-size: 12px;
+    }
     .buyout__form_time span {
         margin-right: 5px;
     }
@@ -1248,7 +1297,7 @@ header .custom-container {
         min-width: auto;
     }
     .buyout__form_head {
-        justify-content: space-between;
+        justify-content: center;
     }
     .buyout__form_time {
         margin-right: 5px;
@@ -1358,6 +1407,11 @@ header .custom-container {
 @media (min-width: 1280px) {
     .custom-container {
         max-width: 1280px;
+    }
+}
+@media (min-width: 1365px) {
+    .custom-container {
+        max-width: calc(100% - 80px);
     }
 }
 /* END:container-width */
