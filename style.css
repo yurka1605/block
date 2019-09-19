@@ -970,11 +970,7 @@ header .custom-container {
         padding-bottom: 100px;
         background-size: cover;
         background: url(img/modal/bg-mobile-top.png) no-repeat center;
-    }
-    .appraiser {
-        padding-bottom: 80px;
-        background: url(img/modal/bg-mobile-bottom.png) no-repeat center bottom;
-        background-size: contain!important;
+        background: url(img/modal/bg-mobile-top.webp) no-repeat center;
     }
     .buyout__form {
         width: auto;
@@ -1104,6 +1100,7 @@ header .custom-container {
         align-items: flex-end;
         justify-content: center;
         background: url(img/bg-video-mobile.png) no-repeat center;
+        background: url(img/bg-video-mobile.webp) no-repeat center;
         background-size: cover;
     }
     .watch-video__play-link {
