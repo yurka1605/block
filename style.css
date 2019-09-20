@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -148,7 +150,6 @@ header .custom-container {
     height: 30px;
     align-items: center;
     justify-content: center;
-    display: flex;
     border-radius: 50%;
     background-color: #18952d;
 }
@@ -227,6 +228,7 @@ header .custom-container {
 .buyout__price {
     font-weight: 700;
     color: #253640;
+    width: 70%;
 }
 .buyout__label {
     margin-top: 30px;
@@ -234,17 +236,20 @@ header .custom-container {
 }
 .buyout__label_place {
     font-size: 26px;
-    color: #00B75A;
-    font-weight: 600;
+    color: #fff;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: 300;
     text-transform: uppercase;
-    border-bottom: 3px solid #00B75A;
+    background: #00B75A;
+    /* border-bottom: 3px solid #00B75A; */
 }
 .buyout__label_pravo {
     max-width: 230px;
     display: inline-block;
     padding: 0 5px 4px 15px;
     font-size: 12px;
-    border-bottom: 3px solid #CCF1DE;
+    /* border-bottom: 3px solid #CCF1DE; */
     color: #434664;
     font-weight: 700;
 }
@@ -271,7 +276,7 @@ header .custom-container {
     line-height: 1;
     z-index: 1;
     text-transform: uppercase;
-    font-size: 53px;
+    font-size: 64px;
     font-weight: 600;
     padding: 2px;
     background-color: #00b75a;
@@ -285,6 +290,7 @@ header .custom-container {
 .buyout__form_badge span {
     display: inline-block;
     font-size: 14px;
+    line-height: 1.3;
     margin-left: 10px;
 }
 .buyout__form_top {
@@ -337,6 +343,8 @@ header .custom-container {
 .buyout__form_bottom span {
     padding: 2px 3px;
     color: #fff;
+    display: block;
+    width: fit-content;
     font-size: 12px;
     border-radius: 4px;
     line-height: 1;
@@ -528,16 +536,16 @@ header .custom-container {
     width: 95%;
     padding: 15px;
     background: #fff;
-    border-bottom-left-radius: 50px;
-    border-top-left-radius: 50px;
+    border-bottom-left-radius: 62px;
+    border-top-left-radius: 62px;
 }
 .watch-video__play-link {
     z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     background: #434664;
 }
@@ -554,17 +562,17 @@ header .custom-container {
     background: #fff;
     color: #434664;
     padding: 0 20px;
-    line-height: 16px;
+    line-height: 1.3;
     margin-left: -13px;
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 600;
 }
 .watch-video__play-label_text-top {
-    font-size: 10px;
+    font-size: 16px;
     opacity: 0.8;
 }
 .watch-video__play-label_text-bottom {
-    font-size: 10px;
+    font-size: 16px;
     text-transform: uppercase;
     opacity: 0.5;
 }
@@ -882,10 +890,7 @@ header .custom-container {
     }
     .watch-video__clip {
         padding-bottom: 100px;
-    }
-    .buyout__head {
-        padding: 0 30px;
-        font-size: 30px;
+        margin-right: -70px;
     }
     .ctx-menu > a {
         display: flex;
@@ -991,6 +996,7 @@ header .custom-container {
     }
     .buyout__head {
         margin: 0 auto;
+        max-width: 70%;
         text-align: center;
     }
     .buyout__head span {
@@ -1113,6 +1119,7 @@ header .custom-container {
         background: url(img/bg-video-mobile.png) no-repeat center;
         background: url(img/bg-video-mobile.webp) no-repeat center;
         background-size: cover;
+        margin-right: 0;
     }
     .watch-video__play-link {
         border-color: transparent;
