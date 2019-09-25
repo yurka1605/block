@@ -1,12 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
 
+@font-face {
+	font-family: 'Museo Sans Cyrl 700';
+	src: url('MuseoSansCyrl-700.eot');
+	src: local('MuseoSansCyrl-700'),
+		url('MuseoSansCyrl-700.eot?#iefix') format('embedded-opentype'),
+		url('MuseoSansCyrl-700.woff') format('woff'),
+		url('MuseoSansCyrl-700.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Museo Sans Cyrl 100';
+	src: url('MuseoSansCyrl-100.eot');
+	src: local('MuseoSansCyrl-100'),
+		url('MuseoSansCyrl-100.eot?#iefix') format('embedded-opentype'),
+		url('MuseoSansCyrl-100.woff') format('woff'),
+		url('MuseoSansCyrl-100.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Roboto", sans-serif;
     overflow-x: hidden;
     width: 100%;
     height: 100%;
@@ -143,6 +165,9 @@ header .custom-container {
     font-weight: 600;
     letter-spacing: 3px;
 }
+.ctx-menu > .header-nav__link_tel {
+    display: none;
+}
 .ctx-menu > a {
     display: none;
     padding: 5px;
@@ -218,17 +243,18 @@ header .custom-container {
     flex-direction: column;
 }
 .buyout__head {
-    font-size: 51px;
-    max-width: 857px;   
-    font-family: 'Raleway', sans-serif;
+    font-size: 45px;
+    font-family: "Museo Sans Cyrl 700","Helvetica Neue",Arial,sans-serif;
+    max-width: 857px;
     font-weight: 700;
-    color: #374751;;
+    color: #374751;
     margin-left: 0;
     margin-bottom: 15px;
 }
 .buyout__price {
     font-weight: 700;
-    max-width: 600px;  
+    max-width: 600px;
+    line-height: 1.7;
     color: #253640;
     width: 70%;
 }
@@ -238,13 +264,13 @@ header .custom-container {
 }
 .buyout__label_place {
     font-size: 45px;
+    font-family: Arial,sans-serif;
     line-height: 1.3;
     white-space: nowrap;
     color: #fff;
     padding-left: 8px;
     padding-right: 8px;
-    font-weight: 300;
-    text-transform: uppercase;
+    font-weight: 100;
     background: #00B75A;
 }
 .buyout__label_pravo {
@@ -252,7 +278,7 @@ header .custom-container {
     line-height: 1.4;
     display: inline-block;
     padding: 0 5px 0 15px;
-    font-size: 14px;
+    font-size: 15px;
     color: #434664;
     font-weight: 700;
 }
@@ -297,6 +323,7 @@ header .custom-container {
     margin-left: 10px;
 }
 .buyout__form_top {
+    font-family: "Museo Sans Cyrl 700","Helvetica Neue",Arial,sans-serif;
     font-size: 22px;
     font-weight: 700;
     color: #253640;
@@ -323,6 +350,7 @@ header .custom-container {
 }
 .buyout__form_head {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     margin-bottom: 10px;
 }
@@ -535,7 +563,6 @@ header .custom-container {
     z-index: 1;
     display: flex;
     align-items: center;
-    overflow: hidden;
     width: 95%;
     padding: 15px;
     background: #fff;
@@ -892,15 +919,17 @@ header .custom-container {
     .header-nav {
         display: none;
     }
+    .ctx-menu > .header-nav__link_tel {
+        display: inline-block;
+        background: none;
+        width: max-content;
+    }
     .ctx-menu ul {
         display: none;
     }
     .watch-video__clip {
         padding-bottom: 100px;
         margin-right: -70px;
-    }
-    .ctx-menu > a {
-        display: flex;
     }
     .modal-body__problem {
         width: 100%;
@@ -910,8 +939,7 @@ header .custom-container {
 }
 @media (max-width: 992px) {
     main {
-        background: url(img/modal/bg-mobile-top.png) no-repeat center;
-        background: url(img/modal/bg-mobile-top.webp) no-repeat center;
+        background: #fff;
         padding-bottom: 0;
         background-size: cover;
     }
@@ -923,9 +951,6 @@ header .custom-container {
     }
     .buyout__price {
         display: none!important;
-    }
-    .buyout__form_head {
-        justify-content: space-between;
     }
     .buyout__form_checkbox label {
         line-height: 20px;
@@ -1121,6 +1146,7 @@ header .custom-container {
     }
     .watch-video__clip {
         padding: 0;
+        padding-bottom: 50px;
         align-items: flex-end;
         justify-content: center;
         background: url(img/bg-video-mobile.png) no-repeat center;
@@ -1159,12 +1185,19 @@ header .custom-container {
         padding-bottom: 10%;
         font-weight: 600;
         margin-left: 0;
+        padding: 0;
     }
     .buyout__form1 {
         padding-top: 15px;
     }
 }
 @media (max-width: 768px) {
+    .ctx-menu > .header-nav__link_tel {
+        display: none;
+    }
+    .ctx-menu > a {
+        display: flex;
+    }
     .logo__text_head {
         font-size: 20px;
     }
@@ -1246,14 +1279,12 @@ header .custom-container {
         margin-top: 10px;
     }
     .buyout__label_place {
-        font-size: 22px;
-        font-size: 20px;
+        font-size: 40px;
         line-height: 1.5;
         padding-left: 4px;
         padding-right: 4px;
     }
     .buyout__label_pravo {
-        font-size: 12px;
         padding: 0;
         padding-left: 5px;
     }
@@ -1280,7 +1311,7 @@ header .custom-container {
         font-size: 9px;
     }
     .buyout__label_pravo {
-        max-width: 213px;
+        max-width: 189px;
     }
     .buyout__form input[type="tel"],
     .buyout__form1 input[type="tel"] {
@@ -1289,9 +1320,6 @@ header .custom-container {
     .buyout__form1 button[type="submit"],
     .buyout__form button[type="submit"] {
         min-width: auto;
-    }
-    .buyout__form_head {
-        justify-content: center;
     }
     .buyout__form_time {
         margin-right: 5px;
@@ -1340,8 +1368,22 @@ header .custom-container {
     .modal__form-enter button {
         margin-top: 10px;
     }
+    main {
+        background-color: #fff;
+        background-image: url(img/modal/bg-mobile-top.png);
+        background-image: url(img/modal/bg-mobile-top.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }
 @media (max-width: 360px) {
+    .buyout__label_place {
+        font-size: 34px;
+    }
+    .buyout__label_pravo {
+        font-size: 13px;
+        max-width: 161px;
+    }
     .modal-body__problem_links {
         height: 32px;
         padding-bottom: 0;
