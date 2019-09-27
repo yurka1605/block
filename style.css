@@ -1216,7 +1216,7 @@ header .custom-container {
 }
 @media (max-width: 768px) {
     main {
-        background-color: #fff;
+        /* background-color: #fff; */
         background-image: url(img/modal/bg-mobile-top.png);
         background-image: url(img/modal/bg-mobile-top.webp);
         background-position: 0 0;
