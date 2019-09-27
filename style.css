@@ -1422,6 +1422,12 @@ header .custom-container {
         font-size: 11px;
     }
 }
+@media (max-width: 320px) {
+    .buyout__label_pravo {
+        font-size: 12px;
+        max-width: none;
+    }
+}
 
 /* container-width */
 @media (min-width: 320px) {
