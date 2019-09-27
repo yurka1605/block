@@ -1278,7 +1278,7 @@ header .custom-container {
 }
 @media (max-width: 540px) {
     main {
-        background-size: contain;
+        background-size: 100%;
     }
     .appraiser__cards_card {width: 100%}
     .modal-body__home_group a span {
@@ -1322,9 +1322,8 @@ header .custom-container {
         padding-left: 5px;
     }
     .buyout__head {
-        font-size: 30px;
         max-width: 100%;
-        padding: 20px;
+        padding: 20px 10px;
     }
     .buyout__form_top {
         font-size: 18px;
