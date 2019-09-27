@@ -1279,9 +1279,9 @@ header .custom-container {
 }
 @media (max-width: 540px) {
     main {
-        /* background-size: 100%; */
+        background-size: 100%;
         background: url(img/modal/bg-mobile-top.png);
-        background: url(img/modal/bg-mobile-top.webp);
+        /* background: url(img/modal/bg-mobile-top.webp); */
     }
     .appraiser__cards_card {width: 100%}
     .modal-body__home_group a span {
