@@ -1424,7 +1424,10 @@ header .custom-container {
 }
 @media (max-width: 320px) {
     .buyout__label_pravo {
-        max-width: 160px;
+        max-width: calc(100% - 133px);
+    }
+    .buyout__label {
+        padding: 0 10px;
     }
 }
 
