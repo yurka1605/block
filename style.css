@@ -1219,6 +1219,7 @@ header .custom-container {
         background-color: #fff;
         background: url(img/modal/bg-mobile-top.png);
         background: url(img/modal/bg-mobile-top.webp);
+        background-position: 0 0;
         background-size: cover;
         background-repeat: no-repeat;
     }
