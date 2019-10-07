@@ -30,7 +30,7 @@ main {
     height: auto;
     background: url(img/bg.png) no-repeat center;
     background: url(img/bg.webp) no-repeat center;
-    background-size: cover;
+    background-size: 100% 100%;
     padding-bottom: 150px;
 }
 .custom-container {
@@ -144,6 +144,7 @@ header .custom-container {
     color: #253640;
     margin-bottom: 15px;
 }
+.kwis.custom-container,
 .buyout__price.custom-container,
 .buyout__form.custom-container,
 .buyout__head.custom-container {
@@ -183,7 +184,7 @@ header .custom-container {
 }
 .buyout__price {
     font-weight: 700;
-    font-size: 22px;
+    font-size: 30px;
     color: #253640;
 }
 .buyout__price_per {
@@ -400,6 +401,7 @@ header .custom-container {
     z-index: 1;
     display: flex;
     background: #fff;
+    padding-right: 15px;
     border-radius: 70px;
     align-items: center;
 }
@@ -432,15 +434,106 @@ header .custom-container {
     color: #253640;
     font-weight: 700;
     padding: 8px 20px;
-    line-height: 1;
-    margin-left: -13px;
+    line-height: 1.3;
 }
 .watch-video__play-label p {
     font-size: 16px;
     line-height: 1;
     font-weight: 500;
+    margin-bottom: 5px;
 }
 /* END:communication */
+
+/* kwis */
+.kwis {
+    margin-top: 15px;
+}
+.kwis__title {
+    color: #253640;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.kwis__cards {
+    display: flex;
+}
+.kwis__card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    margin-right: 10px;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: relative;
+}
+.kwis__card_marker {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #00b75a;
+}
+.kwis__card_text {
+    color: #1d1f24;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+.kwis__card_free {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    transform: translateY(-55%);
+    border-radius: 6px;
+    background-color: #00b75a;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 3px 7px;
+}
+
+.kwiss__buttons {
+    display: flex;
+    margin-top: 20px;
+}
+.kwis__button {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    padding-right: 50px;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    background-color: #00b75a;
+}
+.kwis__button_img {
+    margin-right: 10px;
+}
+.kwis__button_text {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+}
+.kwis__button_subtext {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1.6px;
+}
+.kwis__arrow {
+    margin-left: 30px;
+    height: 75px;
+    margin-top: -15px;
+    transform: rotate(15deg);
+}
+/* END:kwis */
 
 /* appraiser */
 .appraiser {
@@ -451,10 +544,14 @@ header .custom-container {
 .appraiser__cards {
     display: flex;
     justify-content: center;
+    margin-bottom: 25px;
 }
 .appraiser__cards_card {
     display: flex;
-    flex: 0 0 43%;
+    width: fit-content;
+}
+.appraiser__cards_card:first-child {
+    margin-right: 50px;
 }
 .appraiser__cards_card div {
     display: flex;
@@ -469,6 +566,7 @@ header .custom-container {
 /* scales */
 .scales {
     display: flex;
+    justify-content: center;
     width: 80%;
     padding-bottom: 100px;
 }
@@ -859,7 +957,7 @@ header .custom-container {
         font-size: 14px;
     }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     main {
         background: #E3ECF2;
         padding-bottom: 0;
@@ -867,6 +965,7 @@ header .custom-container {
     .communication.custom-container {
         max-width: 100%!important;
     }
+    .kwis.custom-container,
     .buyout__price.custom-container,
     .buyout__form.custom-container,
     .buyout__head.custom-container {

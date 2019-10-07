@@ -44,7 +44,38 @@
                             аванс наличными на руки  
                         </div>
                     </div>
-                    <div class="buyout__form custom-container">
+                    <div class="kwis custom-container">
+                        <div class="kwis__title">
+                            Ответьте на 5 вопросов и получите чек-лист:
+                        </div>
+                        <div class="kwis__cards">
+                            <div class="kwis__card">
+                                <div class="kwis__card_marker"></div>
+                                <div class="kwis__card_text">Как продать<br>недвижимость срочно</div>
+                            </div>
+                            <div class="kwis__card">
+                                <div class="kwis__card_marker"></div>
+                                <div class="kwis__card_text">По 10% от рыночной цены<br>с защитой от рисков</div>
+                            </div>
+                            <div class="kwis__card">
+                                <div class="kwis__card_marker"></div>
+                                <div class="kwis__card_text">Получить оценку<br>объекта недвижимости</div>
+                                <div class="kwis__card_free">БЕСПЛАТНО</div>
+                            </div>
+                        </div>
+                        <div class="kwiss__buttons">
+                            <button class="kwis__button">
+                                <img class="kwis__button_img" src="img/gift.png" alt="gift">
+                                <span class="kwis__button_text">
+                                    Ответить на вопросы
+                                    <span class="kwis__button_subtext">и получить чек-лист</span>
+                                </span>
+                                <img class="affter-effect" src="img/button-effect.png" alt="effect">
+                            </button>
+                            <img class="kwis__arrow" src="img/recycle.png" alt="kwis-recycle">
+                        </div>
+                    </div>
+                    <!-- <div class="buyout__form custom-container">
                         <form action="#" method="post">
                             <div class="buyout__form-enter">
                                 <input type="tel" name="tel" id="tel1" maxlength="18" placeholder="+7 (930) 128-00-48" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required>
@@ -55,7 +86,7 @@
                                 <label for="check">Я согласен с политикой конфиденциальностии даю согласие на обработку моих&nbsp;<a href="#">персональных данных</a></label>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="watch-video custom-container">
                     <div class="watch-video__clip">
@@ -87,7 +118,7 @@
                     <div class="appraiser__cards_card">
                         <picture>
                             <source type="image/webp" srcset="img/box1.webp">
-                            <img src="img/box1.png" alt="box">
+                            <img src="img/box1.png" alt="box" style="margin-right: 15px">
                         </picture>
                         <div>
                             Нотариуса, юристов, форму расчета<br>
@@ -295,7 +326,7 @@
         const linkBlack = document.querySelector('.buyout__head_link-black');
         const linkBlue = document.querySelector('.buyout__head_link-blue');
         const videoShowButton = document.querySelector('.watch-video__play-link ');
-        const form1 = document.querySelector('.buyout__form-enter button');
+        // const form1 = document.querySelector('.buyout__form-enter button');
         const form2 = document.querySelector('.buyout__form-enter1 button');
         const formModal = document.querySelector('.modal__form-enter button');
 
@@ -308,7 +339,7 @@
         const modalBodyForm = document.querySelector('.modal-body__form');
         const modalThanks = document.querySelector('.modal-body__thanks');
         const modalVideo = document.querySelector('.modal-body__video');
-        const tel1 = document.querySelector('#tel1');
+        // const tel1 = document.querySelector('#tel1');
         const tel2 = document.querySelector('#tel2');
         const email = document.querySelector('#email');
         const check1 = document.querySelector('#check');
@@ -325,11 +356,11 @@
             check3.checked = false;
         });
 
-        tel1.addEventListener('input', function () {
-            setTimeout(() => {
-                this.value = validReackTel(this.value);
-            }, 200);
-        });
+        // tel1.addEventListener('input', function () {
+        //     setTimeout(() => {
+        //         this.value = validReackTel(this.value);
+        //     }, 200);
+        // });
 
         tel2.addEventListener('input', function () {
             setTimeout(() => {
@@ -344,14 +375,14 @@
             return validVal;
         }
 
-        form1.addEventListener('click', function () {
-            const re = /\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/;
-            if (!validPhone(tel1, re) || !check1.checked) return;
-            openModal(event);
-            modalBodyForm.classList.add('active');
-            check1.checked = false;
-            tel1.value = ''; 
-        });
+        // form1.addEventListener('click', function () {
+        //     const re = /\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/;
+        //     if (!validPhone(tel1, re) || !check1.checked) return;
+        //     openModal(event);
+        //     modalBodyForm.classList.add('active');
+        //     check1.checked = false;
+        //     tel1.value = ''; 
+        // });
 
         form2.addEventListener('click', function () {
             const re = /\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/;
