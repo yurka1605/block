@@ -56,12 +56,12 @@ header .custom-container {
 }
 .logo a:not(.logo__text_link) {
     display: block;
-    height: 60px;
+    /* height: 60px; */
     text-decoration: none;
     color: #22313B;
-    font-size: 27px;
+    font-size: 28px;
     margin-right: 10px;
-    font-weight: 600;
+    font-weight: 700;
 }
 .logo__text {
     color: #22313B;
@@ -74,9 +74,11 @@ header .custom-container {
 .logo__text_link {
     color: #22313b;
     text-decoration: none;
-    font-size: 13px;
-    margin-top: 7px;
-    margin-left: -150px;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 700;
+    margin-top: 1px;
+    margin-left: -163px;
 }
 .label {
     margin-top: -21px;
@@ -114,8 +116,8 @@ header .custom-container {
 .phone {
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 40px;
+    line-height: 1;
+    font-size: 50px;
     font-family: "Open Sans";
     font-weight: 700;
     color: #22313b;
@@ -180,7 +182,8 @@ header .custom-container {
     color: #253640;
 }
 .buyout__price {
-    font-weight: 800;
+    font-weight: 700;
+    font-size: 22px;
     color: #253640;
 }
 .buyout__price_per {
@@ -428,7 +431,6 @@ header .custom-container {
     font-size: 19px;
     color: #253640;
     font-weight: 700;
-    background: #fff;
     padding: 8px 20px;
     line-height: 1;
     margin-left: -13px;
@@ -1383,9 +1385,27 @@ header .custom-container {
         max-width: 1140px!important;
     }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1366px) {
     .custom-container {
         max-width: 1280px!important;
+    }
+}
+
+@media (min-width: 1580px) {
+    .custom-container {
+        max-width: 1440px!important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .custom-container {
+        max-width: 1780px!important;
+    }
+}
+
+@media (min-width: 2060px) {
+    .custom-container {
+        max-width: 1920px!important;
     }
 }
 /* END:container-width */
