@@ -580,7 +580,7 @@ header .custom-container {
 .scales__img {
     width: 400px;
 }
-.scales picture:last-child .scales__img {
+.scales picture:nth-child(2) .scales__img {
     display: none;
 }
 .scales__text {
@@ -882,7 +882,7 @@ header .custom-container {
 .phone-mobile {
     display: none;
     background: #ffdf48;
-    border-radius: 35px;
+    border-radius: 50%;
     width: 68px;
     height: 68px;
     position: absolute;
