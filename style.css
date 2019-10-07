@@ -1490,6 +1490,7 @@ header .custom-container {
     }
     .buyout__head p {
         width: 50%;
+        line-height: 1.3;
     }
     .buyout__head span {
         display: block;
