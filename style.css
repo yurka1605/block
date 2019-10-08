@@ -1499,6 +1499,9 @@ header .custom-container {
     }
 }
 @media (max-width: 540px) {
+    .modal-body__problem_links a {
+        font-size: 10px;
+    }
     .appraiser__cards_card {width: 100%}
     .modal-body__home_group a span {
         font-size: 12px;
@@ -1612,6 +1615,7 @@ header .custom-container {
     .modal-body__problem_links a {
         line-height: 1;
         padding: 3px 5px;
+        font-size: 10px;
     }
 }
 @media (max-width: 360px) {
