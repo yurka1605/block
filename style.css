@@ -71,6 +71,7 @@ header .custom-container {
 }
 .logo__text_body {
     font-size: 12px;
+    font-weight: 700;
 }
 .logo__text_link {
     color: #22313b;
@@ -274,13 +275,14 @@ header .custom-container {
     color: #fff;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
-    font-weight: 800;
+    font-weight: 700;
     text-align: left;
     position: relative;
     padding-left: 67px;
     transition: .3s;
     backface-visibility: hidden;
     z-index: 1;
+    font-size: 16px;
 }
 .modal__form button[type="submit"]:before,
 .buyout__form1 button[type="submit"]:before,
@@ -320,12 +322,12 @@ header .custom-container {
     width: 42px;
     height: 44px;
 }
-.buyout__form1 button[type="submit"]::after {
+/* .buyout__form1 button[type="submit"]::after {
     background: url(img/eye.png) no-repeat;
     width: 39px;
     height: 21px;
     top: 20px;
-}
+} */
 .modal__form_checkbox,
 .buyout__form_checkbox,
 .buyout__form_checkbox1 {
@@ -521,6 +523,9 @@ header .custom-container {
 .kwis__button_img {
     margin-right: 10px;
 }
+.kwis__button_img:nth-child(2) {
+    display: none;
+}
 .kwis__button_text {
     color: #ffffff;
     font-size: 16px;
@@ -530,9 +535,6 @@ header .custom-container {
 .kwis__button_subtext {
     display: block;
     color: #ffffff;
-    font-size: 14px;
-    font-weight: 300;
-    letter-spacing: 1.6px;
 }
 .kwis__arrow {
     margin-left: 30px;
@@ -590,7 +592,7 @@ header .custom-container {
     color: #253640;
     font-size: 25px;
     font-weight: 700;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
     line-height: 1.2;
     text-transform: uppercase;
 }
@@ -600,13 +602,13 @@ header .custom-container {
     font-weight: 700;
     line-height: 1.3;
     text-transform: uppercase;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
 }
 .scales__text_bottom {
     color: #253640;
     font-size: 16px;
     font-weight: 700;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
     position: relative;
 }
 .scales__recycle {
@@ -617,7 +619,7 @@ header .custom-container {
 .scales__text_buttons {
     display: flex;
 }
-.scales__text_buttons span:last-child {
+.scales__text_buttons button span:nth-child(2) {
     display: none;
 }
 
@@ -625,8 +627,8 @@ header .custom-container {
     border-radius: 10px;
     color: #ffffff;
     padding: 20px;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 700;
     margin-right: 20px;
     outline: none;
     border: none;
@@ -751,6 +753,7 @@ header .custom-container {
 .modal-body__problem {
     background-image: url(img/modal/bg-problem.png);
     background-image: url(img/modal/bg-problem.webp);
+    background-size: 100%;
 }
 .modal-body__home.active {
     display: flex;
@@ -862,14 +865,14 @@ header .custom-container {
     display: inline-flex;
     align-items: center;
     width: fit-content;
-    line-height: 1.3;
+    line-height: 1;
     border: 1px solid #fff;
     text-decoration: none;
     padding: 5px 10px;
     height: 100%;
     border-radius: 4px;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     margin-left: 2%;
 }
@@ -952,10 +955,13 @@ header .custom-container {
     .buyout__head {
         font-size: 30px;
     }
+    .buyout__price {
+        font-size: 18px;
+    }
     .modal-body__problem {
         width: 100%;
         padding: 15%;
-        padding-left: 25%;
+        padding-left: 30%;
     }
     .watch-video__play-label {
         font-size: 16px;
@@ -990,26 +996,35 @@ header .custom-container {
         margin: 0 auto;
     }
     .logo__text_body {
+        font-weight: 600;
         font-size: 7px;
         color: #ffffff;
         text-transform: uppercase;
         letter-spacing: 0.6px;
+        line-height: 1.3;
     }
     .logo__text_link {
-        margin-left: -115px;
+        margin-left: -112px;
         color: #ffffff;
+        font-weight: 600;
     }
-    .logo__text_link img,
+    .logo__text_link > img,
     .logo__text_link p {
         display: none;
     }
     .logo__text_link span {
-        display: inline-block;
+        display: flex;
+        align-items: center;
         font-size: 9px;
+    }
+    .logo__text_link span img {
+        margin-top: 3px;
+        height: 7px;
     }
     .logo a:not(.logo__text_link) {
         font-size: 19px;
         color: #ffffff;
+        font-weight: 600;
     }
     .appraiser__cards_card:first-child {
         margin: 0 auto;
@@ -1141,9 +1156,6 @@ header .custom-container {
         text-align: center;
         padding-left: 20px;
     }
-    .buyout__form1 button[type="submit"] span {
-        font-weight: 400;
-    }
     .modal__form input[type="email"],
     .buyout__form input[type="tel"],
     .buyout__form1 input[type="tel"] {
@@ -1237,6 +1249,17 @@ header .custom-container {
     .kwis__button,
     .kwis__card_marker {
         background: #ffdf48;
+        color: #000;
+    }
+    .kwis__button_subtext,
+    .kwis__button_text {
+        color: #000;
+    }
+    .kwis__button_img:first-child {
+        display: none;
+    }
+    .kwis__button_img:nth-child(2) {
+        display: inline-block;
     }
     .kwiss__buttons {
         margin-top: 10px;
@@ -1371,7 +1394,7 @@ header .custom-container {
         padding-top: 15px;
     }
     .modal-body__problem {
-        padding-left: 25%;   
+        padding-left: 20%;   
     }
     .scales {
         flex-direction: column;
@@ -1415,7 +1438,7 @@ header .custom-container {
     .scales__text_buttons span:first-child {
         display: none;
     }
-    .scales__text_buttons span:last-child {
+    .scales__text_buttons button span:nth-child(2) {
         display: inline-block;
     }
     .scales picture:last-child .scales__img {
@@ -1465,10 +1488,10 @@ header .custom-container {
         width: 100%;
     }
     .modal-body__problem_links a {
-        font-size: 16px;
+        font-size: 14px;
     }
     .modal-body__problem {
-        padding-left: 18%;
+        padding-left: 15%;
         padding-right: 10%;
     }
     .buyout__price:before {
@@ -1480,11 +1503,15 @@ header .custom-container {
     .modal-body__home_group a span {
         font-size: 12px;
     }
+    .body__problem_links a {
+        font-size: 10px;
+    }
+    .buyout__price span {
+        display: block;
+        text-align: center;
+    }
     .buyout__price:before {
         left: 5%;
-    }
-    .modal-body__problem_links a {
-        font-size: 12px;
     }
     .label__place, .label__pravo {
         font-size: 14px;
@@ -1543,8 +1570,8 @@ header .custom-container {
         margin: 0 auto;
     }
     .modal-body__problem {
-        padding-left: 12%;
-        padding-right: 0%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
     .modal-body__form p, .modal-body__form h3 {
         max-width: 100%;
@@ -1582,6 +1609,10 @@ header .custom-container {
     .buyout__price_scope {
         text-align: center;
     }
+    .modal-body__problem_links a {
+        line-height: 1;
+        padding: 3px 5px;
+    }
 }
 @media (max-width: 360px) {
     .modal-body__problem_links {
@@ -1589,7 +1620,12 @@ header .custom-container {
         padding-left: 0;
     }
     .modal-body__problem_links a {
-        font-size: 11px;
+        font-size: 9px;
+        padding: 2px;
+    }
+    .modal-body__problem {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
@@ -1649,6 +1685,79 @@ header .custom-container {
 @media (min-width: 1920px) {
     .custom-container {
         max-width: 1780px!important;
+    }
+    .communication {
+        height: 850px;
+    }
+    .buyout {
+        justify-content: flex-start;
+    }
+    .buyout__head {
+        font-size: 55px;
+        margin-bottom: 30px;
+    }
+    .buyout__head_link-black::after,
+    .buyout__head_link-blue::after {
+        font-size: 24px;
+    }
+    .logo a:not(.logo__text_link) {
+        font-size: 36px;
+    }
+    .kwis__card_text,
+    .logo__text_body {
+        font-size: 16px;
+    }
+    .logo__text_link {
+        font-size: 16px;
+        margin-left: -200px;
+    }
+    .phone {
+        font-size: 55px;
+    }
+    .buyout__price {
+        font-size: 35px;
+    }
+    .kwis {
+        margin-top: 30px;
+    }
+    .kwis__title {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .kwis__card {
+        margin-right: 15px;
+        padding: 10px 15px;
+    }
+    .kwis__card_marker {
+        width: 30px;
+        height: 30px;
+    }
+    .kwis__card_free {
+        font-size: 15px;
+    }
+    .kwiss__buttons {
+        margin-top: 35px;
+    }
+    .kwis__button_text {
+        font-size: 25px;
+    }
+    .kwis__button_subtext {
+        font-size: inherit;
+    }
+    .kwis__button_img {
+        margin-right: 20px;
+        height: 65px;
+    }
+    .kwis__arrow {
+        margin-left: 30px;
+        height: 110px;
+        margin-top: -25px;
+    }
+    .watch-video__clip {
+        padding-bottom: 145px;
+    }
+    .modal-body__problem_links a {
+        font-size: 25px;
     }
 }
 
