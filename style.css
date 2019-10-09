@@ -1172,6 +1172,9 @@ header .custom-container {
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
+    .modal-body__problem {
+        background-image: url(img/modal/bg-problem.png);
+    }
     main {
         background: transparent;
         padding-bottom: 0;
