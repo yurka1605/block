@@ -1134,12 +1134,6 @@ header .custom-container {
 /* END:modal-window */
 
 /* media */
-@media (orientation: landscape) {
-    .modal-body__problem {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-}
 @media (max-width: 1200px) {
     .phone {
         font-size: 30px;
@@ -1914,6 +1908,12 @@ header .custom-container {
     .modal-body__problem {
         padding-left: 20px;
         padding-right: 20px;
+    }
+}
+@media (orientation: landscape) {
+    .modal-body__problem {
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 
