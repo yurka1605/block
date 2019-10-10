@@ -386,12 +386,6 @@ header .custom-container {
     width: 42px;
     height: 44px;
 }
-/* .buyout__form1 button[type="submit"]::after {
-    background: url(img/eye.png) no-repeat;
-    width: 39px;
-    height: 21px;
-    top: 20px;
-} */
 .modal__form_checkbox,
 .buyout__form_checkbox,
 .buyout__form_checkbox1 {
@@ -1696,7 +1690,6 @@ header .custom-container {
         color: #000;
         margin: 0;
         font-weight: 700;
-        text-transform: uppercase;
         font-size: 16px;
     }
     .scales__recycle,
@@ -1796,19 +1789,11 @@ header .custom-container {
         display: block;
         padding-top: 15px;
     }
-    .buyout__form1 button[type="submit"],
-    .buyout__form button[type="submit"] {
-        font-size: 25px;
-    }
 }
 @media (max-width: 480px) {
     .buyout__head {
         line-height: 35px;
         font-size: 35px;
-    }
-    .buyout__form1 button[type="submit"],
-    .buyout__form button[type="submit"] {
-        font-size: 22px;
     }
     .buyout__head span {
         display: block;
@@ -1910,7 +1895,7 @@ header .custom-container {
         padding-right: 20px;
     }
 }
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 480px) {
     .modal-body__problem {
         padding-top: 10px;
         padding-bottom: 10px;
