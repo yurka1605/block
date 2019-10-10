@@ -1915,7 +1915,7 @@ header .custom-container {
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    .body__problem_links a {
+    .modal-body__problem_links a {
         font-size: 10px;
     }
 }
