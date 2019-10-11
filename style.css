@@ -88,6 +88,9 @@ header .custom-container {
         -ms-flex-direction: column;
             flex-direction: column;
 }
+.logo__mobile {
+    display: none;
+} 
 .logo__text_body {
     font-size: 12px;
     font-weight: 700;
@@ -196,6 +199,28 @@ header .custom-container {
     font-weight: 800;
     color: #253640;
     margin-bottom: 15px;
+}
+.buyout__price_scope {
+    position: relative;
+}
+.money-hand {
+    display: none;
+}
+.buyout__price_mark {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    display: block;
+    border-radius: 6px;
+    background-color: #00b75a;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: fit-content;
+    letter-spacing: 0.6px;
+    color: #ffffff;
+    font-size: 9px;
+    line-height: 1;
+    padding: 3px 10px;
 }
 .kwis.custom-container,
 .buyout__price.custom-container,
@@ -548,6 +573,9 @@ header .custom-container {
     font-weight: 700;
     margin-bottom: 10px;
 }
+.kwis__title span {
+    display: block;
+}
 .kwis__cards {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -572,6 +600,9 @@ header .custom-container {
     border-radius: 50%;
     margin-right: 10px;
     background-color: #00b75a;
+}
+.kwis__card_marker img {
+    display: none;
 }
 .kwis__card_text {
     color: #1d1f24;
@@ -1173,6 +1204,28 @@ header .custom-container {
         background: transparent;
         padding-bottom: 0;
     }
+    .money-hand {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -30%);
+    }
+    .buyout__price_mark,
+    .logo a:not(.logo__text_link),
+    .logo__text {
+        display: none;
+    }
+    .logo__mobile {
+        display: block;
+        color: #ffffff;
+        border-left: 3px solid #5da182;
+        padding-left: 5px;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.82px;
+    }
     .communication.custom-container {
         max-width: 100%!important;
     }
@@ -1212,11 +1265,11 @@ header .custom-container {
         margin-top: 3px;
         height: 7px;
     }
-    .logo a:not(.logo__text_link) {
+    /* .logo a:not(.logo__text_link) {
         font-size: 19px;
         color: #ffffff;
         font-weight: 600;
-    }
+    } */
     .appraiser__cards_card:first-child {
         margin: 0 auto;
         padding-bottom: 25px;
@@ -1430,11 +1483,33 @@ header .custom-container {
     .buyout__price {
         font-size: 16px;
         color: #fff;
+        margin-bottom: 30px!important;
     }    
     .buyout__price span {
+        display: block;
+        padding-right: 50px;
+        text-align: center;
+        background: #ffdf48;
+        border-radius: 0;
+        font-weight: 700;
+        border: none;
+        font-size: 21px;
+        color: #1a2a3c;
+    }
+    .buyout__price_scope {
+        font-size: 11px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+    .buyout__price_mark {
+        display: block;
+        bottom: -15px;
+        top: auto;
+        transform: translateX(-33px);
         background: transparent;
-        border-color: #fff;
-        color: #fff;
+        font-size: 11px;
+        font-weight: 400;
+        color: #f4d74a;
     }
     .buyout__price_scope {
         margin-bottom: 15px;
@@ -1455,8 +1530,7 @@ header .custom-container {
         min-width: 300px;
     }
     .kwis__title {
-        color: #fff;
-        text-align: center;
+        display: none;
     }
     .kwis__cards {
         -webkit-box-orient: vertical;
@@ -1465,19 +1539,47 @@ header .custom-container {
                 flex-direction: column;
     }
     .kwis__card {
-        margin-bottom: 15px;
-        margin-right: 0;
+        margin-bottom: 25px!important;
+        background: transparent;
+        width: fit-content;
     }
-    .kwis__card_free,
-    .kwis__button,
-    .kwis__card_marker {
+    .kwis__button {
         background: #ffdf48;
         color: #000;
+        margin: 0 auto;
+    }
+    .kwis__cards {
+        background: transparent;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    .kwis__card_text {
+        line-height: 1.4;
+        margin-left: 0!important;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+    }
+    .kwis__card_free {
+        right: -25px;
+        top: 13px;
+    }
+    .kwis__card_marker_1 {
+        margin-left: -12px;
+    }
+    .kwis__card_marker {
+        background: transparent;
+    }
+    .kwis__card_marker img {
+        display: block;
     }
     .kwis__button_subtext,
     .kwis__button_text {
         color: #000;
     }
+    .kwis__arrow,
     .kwis__button_img:first-child {
         display: none;
     }
