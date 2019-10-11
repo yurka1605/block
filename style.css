@@ -1974,9 +1974,6 @@ header .custom-container {
     .kwis__arrow {
         display: none;
     }
-    .buyout__price_scope {
-        text-align: center;
-    }
     .modal-body__problem_links a {
         line-height: 1;
         padding: 3px 5px;
